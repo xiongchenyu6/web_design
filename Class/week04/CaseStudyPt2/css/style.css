@@ -2,7 +2,7 @@ body {
     width: 90%;
     margin: auto;
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1100px;
     height: 80%;
     box-shadow: 5px 5px 5px 0 rgba(50, 0, 0, 0.8);
     margin-top: 2rem;
@@ -148,15 +148,16 @@ label {
 }
 .details{
     padding: 0 20% 1em;
-}
-.floatleft{
-    float:left;}
-audio {
+
     display:inline-block;
     margin:0.15em;
 }
+audio {
+    margin-top: 1rem;
+    float:right;
+}
 footer {
-    clear: both;
+    clear: right;
     text-align: center;
     width: 100%;
     background-color: #d2b48c;

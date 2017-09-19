@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2017-09-19 Tue 21:18 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="XIONG CHENYU">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title"></h1>
+<div class="org-src-container">
+
+<pre class="src src-plantuml">salt
+{+
+{/ &lt;b&gt;Events | Contact | About | Login }
+{#
+. | Place | Time | Action
+Event 1 | Harber Front | 27 Oct. | [Detail]
+Event 2 | Bukit timah | 23 Oct. | [Detail]}
+}
+</pre>
+</div>
+
+
+<figure>
+<p><img src="home.png" class="img-responsive" alt="home.png">
+</p>
+</figure>
+
+<div class="org-src-container">
+
+<pre class="src src-plantuml">salt
+{+
+{/ Events | Contact | About | &lt;b&gt;Login }
+{
+Login&lt;&amp;person&gt; | <span style="color: #2d9574;">"Username   "</span>
+  Password&lt;&amp;key&gt; | <span style="color: #2d9574;">"****     "</span>
+  [Regist &lt;&amp;tablet&gt;] | [OK &lt;&amp;account-login&gt;]
+  }
+}
+</pre>
+</div>
+
+
+<figure>
+<p><img src="login.png" class="img-responsive" alt="login.png">
+</p>
+</figure>
+
+<div class="org-src-container">
+
+<pre class="src src-plantuml">salt
+{+
+{/ Events | Contact | About | &lt;b&gt;Login }
+{
+Username         | <span style="color: #2d9574;">"                 "</span>
+Password         | <span style="color: #2d9574;">"                 "</span>
+Roles:   | {[] Leader | [] Member }
+Upload Profile Photo:  | { <span style="color: #2d9574;">"xxx.png"</span> | [Browse...] }
+}
+}
+</pre>
+</div>
+
+
+<figure>
+<p><img src="regist.png" class="img-responsive" alt="regist.png">
+</p>
+</figure>
+
+<div class="org-src-container">
+
+<pre class="src src-plantuml">salt
+{+
+{/ Events | Contact | About | &lt;b&gt;Login }
+{
+{ Direction: | ^South^ }
+{ Place: | ^Ntu^ }
+Time    | <span style="color: #2d9574;">"27.Dec 2017"</span>
+Price | <span style="color: #2d9574;">"10 Dollar    "</span>
+Description | <span style="color: #2d9574;">"This is a good party"</span>
+}
+}
+</pre>
+</div>
+
+
+<figure>
+<p><img src="createEvent.png" class="img-responsive" alt="createEvent.png">
+</p>
+</figure>
+
+<div class="org-src-container">
+
+<pre class="src src-plantuml">salt
+{+
+{/ Events | Contact | About | &lt;b&gt;Login }
+{
+{/ &lt;b&gt;MyInfo
+Leader
+Member
+Log out } |
+{
+  { My accout in: | ^Public Mode^ }
+  {Upload Profile Photo:  { <span style="color: #2d9574;">"xxx.png"</span> | [Browse...] }}
+  {[Change Password]  | [Save]}
+}
+}
+}
+</pre>
+</div>
+
+
+<figure>
+<p><img src="management.png" class="img-responsive" alt="management.png">
+</p>
+</figure>
+
+
+<div class="org-src-container">
+
+<pre class="src src-plantuml">salt
+{+
+{/ Events | Contact | About | &lt;b&gt;Login }
+{
+{T
+ + Singapore
+ ++ East
+ +++ USA
+ ++++ New York
+ +++ Mexico
+ ++ West
+ +++ &lt;b&gt;Ntu
+ ++ North
+ +++ Germany
+ ++++ Berlin
+ ++ South
+} |
+{
+  Leader : XiongChenYu
+  ..
+  Place : <span style="color: #2d9574;">"Ntu"</span>
+  ==
+  Time: 11. July
+  ~~
+  Description : XXXXXXXXXXXXXXXXXXX
+  --
+  {[Back] | [Pay and Join]}
+}
+}
+}
+</pre>
+</div>
+
+
+<figure>
+<p><img src="regist.png" class="img-responsive" alt="regist.png">
+</p>
+</figure>
+</div><div class="col-md-3"></div></div></div>
+<footer id="postamble" class="">
+<div id='disqus_thread'></div>
+            <script type='text/javascript'>
+                var disqus_shortname = 'blogfreeman';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+            <p class='author'>Author: XIONG CHENYU (<a href="mailto:xiongchenyu@XIONGs-Air">xiongchenyu@XIONGs-Air</a>)</p><p>Exported At 2017-09-19 Tue 21:18. Created by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="http://orgmode.org">Org-mode</a> 9.1) </p>
+            <a href='#' class='back-to-top' id='fixed-back-to-top' style='display: inline;'></a>
+</footer>
+</body>
+</html>

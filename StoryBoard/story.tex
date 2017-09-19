@@ -1,0 +1,156 @@
+% Created 2017-09-19 Tue 21:16
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{XIONG CHENYU}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={XIONG CHENYU},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.0.50 (Org mode 9.1)},
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\begin{verbatim}
+salt
+{+
+{/ <b>Events | Contact | About | Login }
+{#
+. | Place | Time | Action
+Event 1 | Harber Front | 27 Oct. | [Detail]
+Event 2 | Bukit timah | 23 Oct. | [Detail]}
+}
+\end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{home.png}
+\end{center}
+
+\begin{verbatim}
+salt
+{+
+{/ Events | Contact | About | <b>Login }
+{
+Login<&person> | "Username   "
+  Password<&key> | "****     "
+  [Regist <&tablet>] | [OK <&account-login>]
+  }
+}
+\end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{login.png}
+\end{center}
+
+\begin{verbatim}
+salt
+{+
+{/ Events | Contact | About | <b>Login }
+{
+Username         | "                 "
+Password         | "                 "
+Roles:   | {[] Leader | [] Member }
+Upload Profile Photo:  | { "xxx.png" | [Browse...] }
+}
+}
+\end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{regist.png}
+\end{center}
+
+\begin{verbatim}
+salt
+{+
+{/ Events | Contact | About | <b>Login }
+{
+{ Direction: | ^South^ }
+{ Place: | ^Ntu^ }
+Time    | "27.Dec 2017"
+Price | "10 Dollar    "
+Description | "This is a good party"
+}
+}
+\end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{createEvent.png}
+\end{center}
+
+\begin{verbatim}
+salt
+{+
+{/ Events | Contact | About | <b>Login }
+{
+{/ <b>MyInfo
+Leader
+Member
+Log out } |
+{
+  { My accout in: | ^Public Mode^ }
+  {Upload Profile Photo:  { "xxx.png" | [Browse...] }}
+  {[Change Password]  |	[Save]}
+}
+}
+}
+\end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{management.png}
+\end{center}
+
+
+\begin{verbatim}
+salt
+{+
+{/ Events | Contact | About | <b>Login }
+{
+{T
+ + Singapore
+ ++ East
+ +++ USA
+ ++++ New York
+ +++ Mexico
+ ++ West
+ +++ <b>Ntu
+ ++ North
+ +++ Germany
+ ++++ Berlin
+ ++ South
+} |
+{
+  Leader : XiongChenYu
+  ..
+  Place : "Ntu"
+  ==
+  Time: 11. July
+  ~~
+  Description : XXXXXXXXXXXXXXXXXXX
+  --
+  {[Back] | [Pay and Join]}
+}
+}
+}
+\end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{regist.png}
+\end{center}
+\end{document}
