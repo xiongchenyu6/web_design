@@ -1,11 +1,17 @@
 const calculate = () =>{
     let price = 0;
+    a =[]
+    a.push(document.querySelector('#f').value)
+    a.push(document.querySelector('#s').value)
+    a.push(document.querySelector('#d').value)
     const textinputs = document.querySelectorAll('input[type=checkbox]');
-    const nonempty = [].map.call( textinputs, function( el ) {
+    const nonempty = [].forEach.call( textinputs, function( el, i ) {
         if(el.checked){
-            price += parseFloat(el.value);
+            console.log(parseFloat(el.value) * parseInt(a[i]));
+            price += parseFloat(el.value) * parseInt(a[i]);
         }
         return el.checked
     });
+    console.log("total");
     console.log(price);
 }

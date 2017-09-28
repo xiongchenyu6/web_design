@@ -1,4 +1,5 @@
 let validate = () => {
+
     const now = new Date()
     const name = document.querySelector('#myName').value
     const email = document.querySelector('#myEmail').value

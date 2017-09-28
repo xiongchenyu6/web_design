@@ -6,6 +6,7 @@
     if something changes such as your database credentials, or a path to a specific resource,
     you'll only need to update it here.
 */
+
 $config = array(
     "db" => array(
             "dbname" => "partystarter",
@@ -16,6 +17,7 @@ $config = array(
     "urls" => array(
         "baseUrl" => "http://example.com"
     ),
+
     "paths" => array(
         "uploads" => "/uploads",
         "images" => array(
@@ -40,4 +42,5 @@ defined("TEMPLATES_PATH")
 */
 ini_set("error_reporting", "true");
 error_reporting(E_ALL|E_STRCT);
+
 ?>
