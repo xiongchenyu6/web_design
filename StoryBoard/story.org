@@ -1,3 +1,37 @@
+#+BEGIN_SRC plantuml :exports both :file main.png
+salt
+{+
+{/ Events | Contact | About | Login }
+{
+{+
+~~~~
+C   a   r   o   u   s   e   l   l      
+~~~~
+}
+{
+{+
+~~
+Event 1
+~~
+} |
+{
+~~
+Event 2
+~~
+} |
+{+
+~~
+Event 3
+~~
+}
+}
+}
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:main.png]]
+
 #+BEGIN_SRC plantuml :exports both :file home.png
 salt
 {+
@@ -34,7 +68,7 @@ salt
 {
 Username         | "                 "
 Password         | "                 "
-Roles:   | {[] Leader | [] Member }
+Roles:   | {[] Host | [] Guest }
 Upload Profile Photo:  | { "xxx.png" | [Browse...] }
 }
 }
@@ -53,6 +87,7 @@ salt
 Time    | "27.Dec 2017"
 Price | "10 Dollar    "
 Description | "This is a good party"
+[Cancel <&tablet>] | [Create <&account-login>]
 }
 }
 #+END_SRC
@@ -66,8 +101,8 @@ salt
 {/ Events | Contact | About | <b>Login }
 {
 {/ <b>MyInfo
-Leader
-Member
+Host
+Guest
 Log out } |
 {
 	{ My accout in: | ^Public Mode^ }
@@ -101,7 +136,7 @@ salt
  ++ South
 } |
 {
-  Leader : XiongChenYu
+  Host : XiongChenYu
   ..
   Place : "Ntu"
   ==
