@@ -9,10 +9,10 @@
 
 $config = array(
     "db" => array(
-            "dbname" => "partystarter",
-            "username" => "partystarter",
-            "password" => "partystarter",
-            "host" => "localhost"
+        "host" => "127.0.0.1",
+        "dbname" =>   "partystarter",
+        "username" => "partystarter",
+        "password" => "partystarter",
         ),
     "urls" => array(
         "baseUrl" => "http://example.com"
