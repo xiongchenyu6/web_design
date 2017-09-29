@@ -6,7 +6,7 @@
  * Time: 3:45 PM
  */
 
-include_once(realpath(dirname(__FILE__) . "/../config.php"));
+require_once (realpath(dirname(__FILE__) . "/../config.php"));
 
  $connect = function() use ($config){
     $hostname= $config["db"]["host"];

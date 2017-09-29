@@ -1,19 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-
+<!doctype html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Simple Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Party Starter</title>
+    <link href="/../../public/css/layout.css" rel="stylesheet"/>
 </head>
 
 <body>
 <div id="header">
-    <h1>Simple Site</h1>
+     <img src="/../../public/img/ps_logo.png"></img>
     <ul class="nav global">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Articles</a></li>
-        <li><a href="#">Portfolio</a></li>
+        <li><a href="index.php">Events</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Login</a></li>
     </ul>
-
 </div>
+
+<?php
+
+ ?>
