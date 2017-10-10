@@ -10,11 +10,12 @@
 </head>
 
 <body>
-<div id="header">
-     <img src="/../../public/img/ps_logo.png"></img>
-    <ul class="nav global">
+<div class="header">
+    <img class="logo" src="/../../public/img/ps_logo.png"></img>
+    <ul class="nav">
         <li><a href="index.php">Events</a></li>
         <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
         <li><a href="#">Login</a></li>
     </ul>
 </div>

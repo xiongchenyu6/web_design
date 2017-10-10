@@ -5,7 +5,7 @@ const calculate = () =>{
     a.push(document.querySelector('#s').value)
     a.push(document.querySelector('#d').value)
     const textinputs = document.querySelectorAll('input[type=checkbox]');
-    const nonempty = [].forEach.call( textinputs, function( el, i ) {
+    const nonempty = [].forEach.call( textinputs, ( el, i ) => {
         if(el.checked){
             console.log(parseFloat(el.value) * parseInt(a[i]));
             price += parseFloat(el.value) * parseInt(a[i]);
