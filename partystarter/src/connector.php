@@ -1,0 +1,49 @@
+<?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: xiongchenyu
+ * Date: 28/9/17
+ * Time: 3:45 PM
+ */
+
+require_once (realpath(dirname(__FILE__) . "/./config.php"));
+
+ $connect = function() use ($config){
+    $hostname= $config["db"]["host"];
+    $database= $config["db"]["dbname"];
+    $username= $config["db"]["username"];
+    $password= $config["db"]["password"];
+
+    $conn=new mysqli($hostname, $username, $password,$database);
+    $conn->set_charset("utf8");
+    if($conn->connect_error)
+        echo "Connection fails.";
+    else{
+        //echo "Connected!";
+        return $conn;
+    }
+};
+
+abstract class Model{
+
+    protected $conn;
+    protected $tableName;
+
+    function __construct($tableName){
+        $this->conn = $GLOBALS['connect']();
+        $this->tableName = $tableName;
+    }
+    public function byId($id){
+        $sql="select * from " . $this->tableName . " WHERE `id` = '$id'";
+        $result=$this->conn->query($sql);
+        $row = $result->fetch_assoc();
+        return $row;
+    }
+    public function all(){
+        $sql="SELECT * FROM " . $this->tableName;
+        $result=$this->conn->query($sql);
+        $row = $result->fetch_assoc();
+        return $row;
+    }
+}
+?>

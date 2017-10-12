@@ -9,5 +9,4 @@
  */
 
 echo $setInIndexDotPhp;
-
 ?>

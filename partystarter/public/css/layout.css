@@ -1,18 +1,38 @@
 .header {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:1fr 5fr 5fr;
+    grid-gap: 1rem 0.1rem;
+    grid-template-areas:
+        ". . . . ."
+        ". logo logo logo ."
+            "title title title title title";
+   align-items: center;
 }
 .logo {
     width: 100%;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3
+    grid-area: logo;
 }
 .nav{
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row-start: 3;
-    grid-row-end: 5;
+    display: grid;
+    grid-area: title;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    font-size: 3vw;
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:1fr 5fr 10fr;
+        grid-template-areas:
+            ". . ."
+                "logo logo logo"
+                "title title title";
+    }
+    .nav{
+        grid-template-columns: 1fr;
+        grid-template-row: repeat(5, 1fr);
+        font-size: 9vw;
+    }
 }

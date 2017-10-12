@@ -6,6 +6,7 @@
     if something changes such as your database credentials, or a path to a specific resource,
     you'll only need to update it here.
 */
+session_start();
 
 $config = array(
     "db" => array(
@@ -15,7 +16,7 @@ $config = array(
         "password" => "partystarter",
         ),
     "urls" => array(
-        "baseUrl" => "http://example.com"
+        "baseUrl" => "http://localhost"
     ),
 
     "paths" => array(
@@ -37,6 +38,9 @@ $config = array(
 */
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+
+defined("MODULES_PATH")
+or define("MODULES_PATH", realpath(dirname(__FILE__) . '/models'));
 /*
     Error reporting.
 */
