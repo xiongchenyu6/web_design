@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="css/style.css" rel="stylesheet"/>
+        <title>Xiong Chenyu Coffee House</title>
+    </head>
+
+    <body>
+        <nav>
+            <a href="index.html"></a>
+        </nav>
+        <aside>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+            </ul>
+        </aside>
+        <main>
+            <h2>Job at JavaJam</h2>
+            <p>Want to work at JavaJam? Fill out the form below to start your application. Required fields are marked by an asterisk (*).</p>
+
+            <form method="post" action="php/show_post.php">
+                <label for="myName">* Name:</label>
+                <input onkeyup="validate()" type="text" name="myName" id="myName"
+                       required="required" placeholder="first and last name">
+                <br>
+                <label for="myEmail">* E-mail:</label>
+                <input onkeyup="validate()" type="email" name="myEmail" id="myEmail"
+                       required="required" placeholder="you@yourdomain.com">
+                <br>
+                <label for="startDate">Start Date:</label>
+                <input onchange="validate()" type="date" name="startDate" id="startDate">
+                <br>
+                <label for="myExperience">* Experience:</label>
+                <textarea placeholder="php" name="myExperience" id="myExperience" rows="2" cols="20" required></textarea>
+                <input id="mySubmit" type="submit" value="Submit">
+
+                <br>
+            </form>
+        </main>
+        <footer>Copyright &copy; 2014 JavaJam Coffee House<br>
+            <a href="mailto:cxiong001@e.ntu.edu.sg">cxiong001@e.ntu.edu.sg</a></footer>
+    </body>
+    <script src="js/jobs.js">
+
+    </script>
+</html>
