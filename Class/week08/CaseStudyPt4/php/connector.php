@@ -31,7 +31,7 @@ abstract class Model{
 
     function __construct($tableName){
         $this->conn = $GLOBALS['connect']();
-        $this->tableName = $tableName;
+        $this->tableName = "`$tableName`";
     }
     public function byId($id){
         $sql="select * from " . $this->tableName . " WHERE `id` = '$id'";

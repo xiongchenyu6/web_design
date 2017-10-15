@@ -9,6 +9,16 @@ require_once(realpath(dirname(__FILE__) . "/php/config.php"));
 require_once(MODULES_PATH . "/Food.php");
 $food = new Food('food');
 $foodList = $food->all();
+$postData = file_get_contents('php://input');
+if($postData != NULL){
+    $json = json_decode($postData, true);
+    require_once(MODULES_PATH . "/Meal.php");
+    require_once(MODULES_PATH . "/Order.php");
+    $meal = new Meal('meal');
+    $order = new Order('order');
+    $newMeal = $meal->createMeal();
+    $order->createOrder($newMeal['id'],$json);
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +36,12 @@ $foodList = $food->all();
         </nav>
         <aside>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="menu.php">Menu</a></li>
                 <li><a href="music.html">Music</a></li>
                 <li><a href="jobs.html">Jobs</a></li>
+                           <li><a href="priceUpdate.php">UpdatePrice</a></li>
+                                      <li><a href="history.php">History</a></li>
             </ul>
         </aside>
         <main>
@@ -41,20 +53,23 @@ foreach($foodList as $food) {
     $foodPrice = number_format(($food['price'] /100), 2, '.',' ');
     $foodName = $food['name'];
     $foodId = $food['id'];
-    echo "<tr>";
     echo"<tr>";
     echo"<td><strong>$foodName</strong></td>";
     echo"<td> Regular house blend , decafllienate coffee, or flavor of the day.<br>";
-    echo"Endless Cup $foodPrice";
-    echo"         <input onchange=\"calculate()\" id=\"a\" name=\"\" type=\"checkbox\" value=2\/>";
-    echo"         <input  onkeyup=\"calculate()\"  id=\"f\" name=\"\" type=\"text\" value=\"\"\/>";
-    echo"     </td>";
-    echo" </tr>";
+    echo"Endless Cup \$S $foodPrice";
+
+    echo"<input onchange=\"addFood(event,$foodId,$foodPrice)\" name=\"\" type=\"checkbox\" value=\"$foodPrice\"\/>";
+    echo"<input onkeyup=\"changeAmount(event,$foodId)\" name=\"\" type=\"text\" value=\"0\"\/>";
+    echo"</td>";
+    echo"<td>Subtotal : <span id=\"sub$foodId\">0.00</span><br>";
+    echo"</td>";
+    echo"</tr>";
 }
 ?>
                     </tbody>
                 </table>
-<input type='button' value="Sublit"></input>
+<input type='button' onclick="buy()" value="Sublit"></input>
+                          <span id="total">0.00</span>
         </main>
         <footer>Copyright &copy; 2014 JavaJam Coffee House<br>
             <a href="mailto:cxiong001@e.ntu.edu.sg">cxiong001@e.ntu.edu.sg</a></footer>

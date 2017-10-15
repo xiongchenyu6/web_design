@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: xiongchenyu
- * Date: 11/10/17
- * Time: 2:53 PM
- */
+<?php if(isset($_POST['type'])):
 require_once(realpath(dirname(__FILE__) . "/php/config.php"));
 require_once(MODULES_PATH . "/Food.php");
 $food = new Food('food');
-if(isset($_POST['id'])) {
-    $food->updatePrice($_POST['id'], $_POST['price'] );
+if($_POST['type'] == "price"){
+    echo(json_encode($food->sumByProduct()));
+}else{
+    echo(json_encode($food->quantityByProduct()));
 }
-$foodList = $food->all();
 ?>
 
+<?php else: ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,23 +34,14 @@ $foodList = $food->all();
             </ul>
         </aside>
         <main>
-            <h2>Click to update product prices</h2>
+            <h2>Click to generate daily sales report</h2>
+                <div id="showData"></div>
                 <table>
                     <tbody>
-<?php
-foreach($foodList as $food) {
-    $foodPrice = number_format(($food['price'] /100), 2, '.',' ');
-    $foodName = $food['name'];
-    $foodId = $food['id'];
-    echo"<tr>";
-    echo"<td><input onclick=\"updatePrice($foodId)\" type=\"button\" value=\"ChangePrice\"></input></td>";
-    echo"<td><strong>$foodName</strong></td>";
-    echo"<td> Regular house blend , decafllienate coffee, or flavor of the day.<br>";
-    echo"Endless Cup $foodPrice";
-    echo"     </td>";
-    echo" </tr>";
-}
-?>
+                        <tr><td><button onclick="show('price')">Click</button></td><td>Total dollar sales by product</td></tr>
+                              <tr><td><button onclick="show('quantity')">Click</button></td><td>Sales quantities by product categories</td></tr>
+                                                                                                                                                                                                    <tr><td><button>Click</button></td><td>Product category with achieved the highest dollar sales</td></tr>
+
 
                     </tbody>
                 </table>
@@ -62,6 +49,7 @@ foreach($foodList as $food) {
         <footer>Copyright &copy; 2014 JavaJam Coffee House<br>
             <a href="mailto:cxiong001@e.ntu.edu.sg">cxiong001@e.ntu.edu.sg</a></footer>
     </body>
-    <script src="js/updatePrice.js">
+    <script src="js/history.js">
     </script>
 </html>
+<?php endif; ?>

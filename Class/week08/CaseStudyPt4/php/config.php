@@ -6,8 +6,6 @@
     if something changes such as your database credentials, or a path to a specific resource,
     you'll only need to update it here.
 */
-session_start();
-
 $config = array(
     "db" => array(
         "host" => "127.0.0.1",

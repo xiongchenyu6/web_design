@@ -10,14 +10,16 @@
 
     <body>
         <nav>
-            <a href="index.html"></a>
+            <a href="index.php"></a>
         </nav>
         <aside>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="menu.php">Menu</a></li>
                 <li><a href="music.html">Music</a></li>
                 <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="priceUpdate.php">UpdatePrice</a></li>
+                <li><a href="history.php">History</a></li>
             </ul>
         </aside>
         <main>

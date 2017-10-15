@@ -8,11 +8,12 @@ class Meal extends Model {
         $sql = "insert " . $this->tableName . " () values();";
         $result= $this->conn->query($sql);
         if(!$result){
-            return false;
+            return null;
         }else{
-            return true;
+            $sql="SELECT `id` FROM ". $this->tableName. " WHERE id = (SELECT MAX(`id`) FROM " . $this->tableName .")";
+            $result= $this->conn->query($sql);
+            return $result->fetch_assoc();
         }
     }
 }
-
 ?>
