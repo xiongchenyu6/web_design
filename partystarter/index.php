@@ -12,7 +12,7 @@ $user = new User('user');
 print_r($user->byId(1));
 ?>
 <div>
-    Main
+    Main..
 
 <?php
 // close container div
