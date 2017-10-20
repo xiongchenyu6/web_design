@@ -11,12 +11,14 @@
 
 <body>
 <div class="header">
-    <img class="logo" src="/../../public/img/ps_logo.png"></img>
+ <img class="logo" src="/../../public/img/ps_logo.png"></img>
     <div class="nav">
         <div><a href="index.php">Home</a></div>
         <div><a href="parties.php">Parties</a></div>
         <div><a href="about.php">About</a></div>
-        <div><a href="contact.php">Contact</a></div>
+        <div><a href="support.php">Support</a></div>
         <div><a href="login.php">Login</a></div>
     </div>
 </div>
+
+
