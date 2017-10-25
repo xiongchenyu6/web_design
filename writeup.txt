@@ -1,3 +1,93 @@
+
+
+##TODO populate sample events
+
+## region fill should be radio button/ drop down.
+North
+South
+East 
+West 
+Central
+
+Sample Event 1
+Host: Aaron
+Date: 10-12-2017
+Time: 1900 - 2300
+Theme: Masquerade
+Address: 50 Nanyang View, Campus Clubhouse, Singapore 639667
+Region: West
+Desc (140 Char): Finals are finally over! Let's gather and have fun! Drinks are provided, just bring your masks! Bring your friends too!
+No. of Tickets: 20
+Price: $10
+
+need profile pic 200x200 y
+need map sq 500x500 y
+
+
+
+Sample Event 2
+Host: Ben
+Date: 12-12-2017
+Time: 0900 - 1300
+Theme: Beach
+Address: Nicoll Dr, Singapore 498991
+Region: East
+Desc (140 Char): Let's meet for some morning sunshine! I have booked some kayaks for the adventurous! We will have BBQ session in the afternoon!
+No. of Tickets: 20
+Price: $20
+
+need profile pic 200x200  y
+need map sq 500x500 y
+
+Sample Event 3
+Host: Chris
+Date: 24-12-2017
+Time: 1900 - 2359
+Theme: Christmas
+Address: 1 Beach Rd, Singapore 189673
+Region: Central
+Desc (140 Char): It is festive season, let's celebrate! Sumptuous dinner and wine included!
+
+No. of Tickets: 15
+Price: $25
+
+need profile pic 200x200 y
+need map sq 500x500 y
+
+
+
+##TODO craft message aft payment success?
+
+Email Template
+
+Subject: Partystarter - Event Joined!
+
+Message:
+Hi GETNAME
+
+You have successfully joined:
+
+GETEVENT DETAILS
+
+
+Just present this email to your host during the party!
+Have fun!
+
+Sincerely,
+Partystarter
+
+
+##TODO
+Contact us form for about.php, support.php
+
+INPUT fill>>
+Name*:
+Email Address*:
+Message*:
+
+
+##DONE
+
 About Partystarter
 
 Who we are:
