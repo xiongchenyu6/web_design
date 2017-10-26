@@ -82,6 +82,12 @@ footer p{
 
 }
 
+form  { display: table; }
+#form     { display: table-row;  
+            text-align: justify;
+            font-size: 2vw;}
+label { display: table-cell; }
+input { display: table-cell; }
 
 
 @media only screen and (max-width: 500px) {

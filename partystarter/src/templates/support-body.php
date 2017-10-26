@@ -28,11 +28,18 @@ Ticket prices may differ due to many reasons such as party location, cost of par
 <br><br>
 <p>Still can't find an answer? Ask away below!</p>
 
-<h3 class="title">Contact us</h3>
-#todo include: contact form
-Input fill-<br>
-Name*,
-Email*,
-Message*, SUBMIT
+<h3 class="title">Contact us</h3><center>
+<form action="mailto:hello@partystarter.com">
+		<div id="form">
+    <label>*Name: </label><input type="text" name="myName"  id="myName" size=30 required  placeholder = ""><br ><br></div>
+    		<div id="form">
+   <label>*Email: </label><input type="email" name="myEmail"  id="myEmail" required  placeholder = "">
+   <br ><br></div>
+      		<div id="form">
+            <label>*Question:  </label><input type="text" name="myExperience"  id="myExperience" required  placeholder = ""><br ><br></div>
+   <input type="submit" value="Submit"> 
+</form></center>
+<br><br><br>
 
+<script type="text/javascript"  src="js/check.js" ></script>
 </div>
