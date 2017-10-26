@@ -44,5 +44,14 @@ class Food extends Model {
         }
         return $rows;
     }
+    public function sumByProductByDate() {
+        $sql = "SELECT meal.create_at,ROUND(SUM(price*quantity/100),2) as `total price` FROM `order` INNER JOIN food ON order.food_id = food.id INNER JOIN meal ON order.meal_id = meal.id group by day(meal.create_at)";
+        $result= $this->conn->query($sql);
+        while($row = $result->fetch_assoc())
+        {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 }
 ?>
