@@ -7,8 +7,6 @@
  */
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
-$renderLayoutWithContentFile("login-body.php");
+$renderLayoutWithContentFile(partyDetail-body.php");
 
 ?>
-
-<script src="public/js/login.js"></script>

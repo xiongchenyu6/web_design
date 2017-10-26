@@ -1,4 +1,4 @@
-<form action="login.php" method="post" enctype="multipart/form-data">
+<form action="register.php" method="post" enctype="multipart/form-data">
 
 <label for="username">Name</label>
 <input id ="username" name="username" />
