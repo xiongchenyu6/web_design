@@ -1,50 +1,41 @@
 const show = (type) =>{
-    var http = new XMLHttpRequest();
-    var url = "history.php";
-    var params = `type=${type}`;
+    let http = new XMLHttpRequest();
+    let url = "history.php";
+    let params = `type=${type}`;
     http.open("POST", url, true);
-
-    //Send the proper header information along with the request
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange = function() { //Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
             data = JSON.parse(http.responseText);
             console.log(data)
-            var col = [];
-            for (var i = 0; i < data.length; i++) {
-                for (var key in data[i]) {
-                    if (col.indexOf(key) === -1) {
-                        col.push(key);
+            let cols = [];
+            data.map((el)=>{
+                for(let key in el){
+                    if(cols.indexOf(key) === -1){
+                        cols.push(key)
                     }
                 }
-            }
+            })
 
-            // CREATE DYNAMIC TABLE.
-            var table = document.createElement("table");
+            let table = document.createElement("table");
 
-            // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+            let tr = table.insertRow(0);                   // TABLE ROW.
 
-            var tr = table.insertRow(-1);                   // TABLE ROW.
-
-            for (var i = 0; i < col.length; i++) {
-                var th = document.createElement("th");      // TABLE HEADER.
-                th.innerHTML = col[i];
+            cols.map((el)=>{
+                let th = document.createElement("th");      // TABLE HEADER.
+                th.innerHTML = el;
                 tr.appendChild(th);
-            }
+            })
 
-            // ADD JSON DATA TO THE TABLE AS ROWS.
-            for (var i = 0; i < data.length; i++) {
-
+            data.map((el)=>{
                 tr = table.insertRow(-1);
+                cols.map((col) => {
+                    let tabCell = tr.insertCell(-1);
+                    tabCell.innerHTML = el[col];
+                })
+            })
 
-                for (var j = 0; j < col.length; j++) {
-                    var tabCell = tr.insertCell(-1);
-                    tabCell.innerHTML = data[i][col[j]];
-                }
-            }
-
-            // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-            var divContainer = document.getElementById("showData");
+            let divContainer = document.getElementById("showData");
             divContainer.innerHTML = "";
             divContainer.appendChild(table);
         }
