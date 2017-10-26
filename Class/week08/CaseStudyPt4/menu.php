@@ -48,24 +48,24 @@ if($postData != NULL){
                 <h2>Coffee at JavaJam</h2>
                 <table>
                     <tbody>
-<?php
-foreach($foodList as $food) {
-    $foodPrice = number_format(($food['price'] /100), 2, '.',' ');
-    $foodName = $food['name'];
-    $foodId = $food['id'];
-    echo"<tr>";
-    echo"<td><strong>$foodName</strong></td>";
-    echo"<td> Regular house blend , decafllienate coffee, or flavor of the day.<br>";
-    echo"Endless Cup \$S $foodPrice";
+                        <?php
+                        foreach($foodList as $food) {
+                            $foodPrice = number_format(($food['price'] /100), 2, '.',' ');
+                            $foodName = $food['name'];
+                            $foodId = $food['id'];
+                            echo"<tr>";
+                            echo"<td><strong>$foodName</strong></td>";
+                            echo"<td> Regular house blend , decafllienate coffee, or flavor of the day.<br>";
+                            echo"Endless Cup \$S $foodPrice";
 
-    echo"<input onchange=\"addFood(event,$foodId,$foodPrice)\" name=\"\" type=\"checkbox\" value=\"$foodPrice\"\/>";
-    echo"<input onkeyup=\"changeAmount(event,$foodId)\" name=\"\" type=\"text\" value=\"0\"\/>";
-    echo"</td>";
-    echo"<td>Subtotal : <span id=\"sub$foodId\">0.00</span><br>";
-    echo"</td>";
-    echo"</tr>";
-}
-?>
+                            echo"<input onchange=\"addFood(event,$foodId,$foodPrice)\" name=\"\" type=\"checkbox\" value=\"$foodPrice\"\/>";
+                            echo"<input onkeyup=\"changeAmount(event,$foodId)\" name=\"\" type=\"text\" value=\"0\"\/>";
+                            echo"</td>";
+                            echo"<td>Subtotal : <span id=\"sub$foodId\">0.00</span><br>";
+                            echo"</td>";
+                            echo"</tr>";
+                        }
+                        ?>
                     </tbody>
                 </table>
 <input type='button' onclick="buy()" value="Sublit"></input>

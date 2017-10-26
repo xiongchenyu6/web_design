@@ -4,8 +4,10 @@ require_once(MODULES_PATH . "/Food.php");
 $food = new Food('food');
 if($_POST['type'] == "price"){
     echo(json_encode($food->sumByProduct()));
-}else{
+}else if($_POST['type'] == "quantity"){
     echo(json_encode($food->quantityByProduct()));
+}else{
+    echo(json_encode($food->sumByProductSort()));
 }
 ?>
 
@@ -40,7 +42,7 @@ if($_POST['type'] == "price"){
                     <tbody>
                         <tr><td><button onclick="show('price')">Click</button></td><td>Total dollar sales by product</td></tr>
                               <tr><td><button onclick="show('quantity')">Click</button></td><td>Sales quantities by product categories</td></tr>
-                                                                                                                                                                                                    <tr><td><button>Click</button></td><td>Product category with achieved the highest dollar sales</td></tr>
+                                                                                                                                                                                                    <tr><td><button onclick="show('sort')">Click</button></td><td>Product category with achieved the highest dollar sales</td></tr>
 
 
                     </tbody>
