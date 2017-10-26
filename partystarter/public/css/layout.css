@@ -82,6 +82,24 @@ footer p{
 
 }
 
+.eventphoto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows:3fr 1fr;
+    grid-template-areas:
+        "pic pic pic"
+            "word word word";
+   align-items: center;
+}
+
+.word{
+    display: grid;
+    grid-area: title;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    font-size: 3vw;
+}
+
 form  { display: table; }
 #form     { display: table-row;  
             text-align: justify;
@@ -104,6 +122,18 @@ input { display: table-cell; }
         grid-template-row: repeat(5, 1fr);
         font-size: 9vw;
     }
+    .eventphoto{
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr;
+        grid-template-areas:
+                "pic"
+                "word"
+                "pic"
+                "word"
+                "pic"
+                "word";
+    }
+}
 }
 
 
