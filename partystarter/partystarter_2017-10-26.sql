@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.19)
 # Database: partystarter
-# Generation Time: 2017-10-26 03:00:52 +0000
+# Generation Time: 2017-10-26 03:08:52 +0000
 # ************************************************************
 
 
@@ -63,6 +63,7 @@ CREATE TABLE `host` (
   `price` int(11) DEFAULT NULL,
   `maximum` int(11) DEFAULT NULL,
   `theme` varchar(255) DEFAULT NULL,
+  `event_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
