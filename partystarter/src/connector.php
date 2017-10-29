@@ -31,19 +31,25 @@ abstract class Model{
 
     function __construct($tableName){
         $this->conn = $GLOBALS['connect']();
-        $this->tableName = $tableName;
+        $this->tableName = "`$tableName`";
     }
     public function byId($id){
-        $sql="select * from " . $this->tableName . " WHERE `id` = '$id'";
-        $result=$this->conn->query($sql);
+        $stmt=$this->conn->prepare("select * from " . $this->tableName . " WHERE `id` = ?");
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $result=$stmt->get_result();
         $row = $result->fetch_assoc();
+        $stmt->close();
         return $row;
     }
     public function all(){
         $sql="SELECT * FROM " . $this->tableName;
         $result=$this->conn->query($sql);
-        $row = $result->fetch_assoc();
-        return $row;
+        while($row = $result->fetch_assoc())
+        {
+            $rows[] = $row;
+        }
+        return $rows;
     }
 }
 ?>

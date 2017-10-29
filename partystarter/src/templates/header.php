@@ -17,7 +17,17 @@
         <div><a href="parties.php">Parties</a></div>
         <div><a href="about.php">About</a></div>
         <div><a href="support.php">Support</a></div>
-        <div><a href="login.php">Login</a></div>
+        <?php
+        if( isset($_SESSION['photoUrl'])){
+            $photourl = $_SESSION['photoUrl'];
+            $baseUrl = $_SERVER['PHP_SELF'] . "?logout=1";
+           echo("<div><img class='profilePhoto' src='$photourl'><a href='$baseUrl'>Logout</a></div>");
+
+        }else{
+           echo("<div><a href=\"login.php\">Login</a></div>");
+        }
+        ?>
+
     </div>
 </div>
 

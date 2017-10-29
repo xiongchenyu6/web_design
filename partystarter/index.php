@@ -7,6 +7,16 @@
  */
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
-$renderLayoutWithContentFile("index-body.php");
-
 ?>
+<?php if(isset($_GET['logout'])): ?>
+    <?php
+    session_destroy();
+
+    ?>
+<?php endif; ?>
+
+    <?php
+    $renderLayoutWithContentFile("index-body.php");
+    ?>
+    <script src="public/js/login.js"></script>
+
