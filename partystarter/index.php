@@ -8,7 +8,7 @@
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
 ?>
-<?php if(isset($_GET['logout'])): ?>
+<?php if (isset($_GET['logout'])): ?>
     <?php
     session_destroy();
     echo '<script type="text/javascript">
@@ -17,8 +17,8 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
     ?>
 <?php endif; ?>
 
-    <?php
-    $renderLayoutWithContentFile("index-body.php");
-    ?>
-    <script src="public/js/login.js"></script>
+<?php
+$renderLayoutWithContentFile("index-body.php");
+?>
+<script src="public/js/login.js"></script>
 

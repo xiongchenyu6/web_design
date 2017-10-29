@@ -11,10 +11,10 @@ session_start();
 $config = array(
     "db" => array(
         "host" => "127.0.0.1",
-        "dbname" =>   "partystarter",
+        "dbname" => "partystarter",
         "username" => "partystarter",
         "password" => "partystarter",
-        ),
+    ),
     "urls" => array(
         "baseUrl" => "http://localhost"
     ),
@@ -37,7 +37,7 @@ $config = array(
     ex. require_once(LIBRARY_PATH . "Paginator.php")
 */
 defined("TEMPLATES_PATH")
-    or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
 
 defined("MODULES_PATH")
 or define("MODULES_PATH", realpath(dirname(__FILE__) . '/models'));
@@ -45,6 +45,6 @@ or define("MODULES_PATH", realpath(dirname(__FILE__) . '/models'));
     Error reporting.
 */
 ini_set("error_reporting", "true");
-error_reporting(E_ALL|E_STRCT);
+error_reporting(E_ALL | E_STRCT);
 
 ?>

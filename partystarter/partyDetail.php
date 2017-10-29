@@ -7,6 +7,6 @@
  */
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
-$renderLayoutWithContentFile(partyDetail-body.php");
+$renderLayoutWithContentFile("partyDetail-body.php");
 
 ?>

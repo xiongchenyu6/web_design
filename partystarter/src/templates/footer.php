@@ -1,10 +1,10 @@
-
-<footer><center>
-		<p>
-        Copyright © 2017 Partystarter
+<footer>
+    <center>
+        <p>
+            Copyright © 2017 Partystarter
         </p>
         <p>
-        <a href="mailto:hello@partystarter.com">hello@partystarter.com</a>
+            <a href="mailto:hello@partystarter.com">hello@partystarter.com</a>
         </p>
 
 </footer>

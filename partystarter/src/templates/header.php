@@ -11,20 +11,20 @@
 
 <body>
 <div class="header">
- <img class="logo" src="/../../public/img/ps_logo.png"></img>
+    <img class="logo" src="/../../public/img/ps_logo.png"></img>
     <div class="nav">
         <div><a href="index.php">Home</a></div>
         <div><a href="parties.php">Parties</a></div>
         <div><a href="about.php">About</a></div>
         <div><a href="support.php">Support</a></div>
         <?php
-        if( isset($_SESSION['photoUrl'])){
+        if (isset($_SESSION['photoUrl'])) {
             $photourl = $_SESSION['photoUrl'];
             $baseUrl = $_SERVER['PHP_SELF'] . "?logout=1";
-           echo("<div><a href='management.php'><img class='profilePhoto' src='$photourl'></a><div><a href='$baseUrl'>Logout</a></div></div>");
+            echo("<div><a href='management.php'><img class='profilePhoto' src='$photourl'></a><div><a href='$baseUrl'>Logout</a></div></div>");
 
-        }else{
-           echo("<div><a href=\"login.php\">Login</a></div>");
+        } else {
+            echo("<div><a href=\"login.php\">Login</a></div>");
         }
         ?>
 

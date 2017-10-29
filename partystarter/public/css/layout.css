@@ -13,8 +13,9 @@
 }
 
 .header .profilePhoto {
- width: 50%;
+    width: 50%;
 }
+
 .logo {
     width: 100%;
     grid-area: logo;
