@@ -11,7 +11,9 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 <?php if(isset($_GET['logout'])): ?>
     <?php
     session_destroy();
-
+    echo '<script type="text/javascript">
+           window.location = "index.php"
+      </script>';
     ?>
 <?php endif; ?>
 

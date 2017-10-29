@@ -21,7 +21,7 @@
         if( isset($_SESSION['photoUrl'])){
             $photourl = $_SESSION['photoUrl'];
             $baseUrl = $_SERVER['PHP_SELF'] . "?logout=1";
-           echo("<div><img class='profilePhoto' src='$photourl'><a href='$baseUrl'>Logout</a></div>");
+           echo("<div><a href='management.php'><img class='profilePhoto' src='$photourl'></a><div><a href='$baseUrl'>Logout</a></div></div>");
 
         }else{
            echo("<div><a href=\"login.php\">Login</a></div>");
