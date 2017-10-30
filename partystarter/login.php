@@ -12,7 +12,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
     $username = $_POST['username'];
     $password = $_POST['password'];
     if (isset($_SESSION['photoUrl'])) {
-        echo("You have login already");
+        echo("You have logged in.");
     } else {
         require_once(MODULES_PATH . "/User.php");
         $user = new User("user");
@@ -24,7 +24,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
       </script>';
 
         } else {
-            echo("Wrong username or passowrd");
+            echo("Wrong username or password");
         }
     }
     ?>

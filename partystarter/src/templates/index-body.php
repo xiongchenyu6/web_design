@@ -1,4 +1,4 @@
-<img class="cover" src="/../../public/img/caro22.jpeg"></img>
+
 <h3 class="title">Finding the next party is as simple as 1,2,3!</h3>
 
 <img src="/../../public/img/ps_img.jpeg" width="10%" height="10%" align="left"></img>
@@ -14,17 +14,20 @@
 <center>
 
     <!--- write for layout only. fetch from db later -->
-    <div class="eventphoto">
-        <img src="/../sample event 4 db populate/Event1/addr1.jpg"></img>
-        <div><img src="/../sample event 4 db populate/Event2/addr2.jpg"></img></div>
-        <div><img src="/../sample event 4 db populate/Event3/addr3.jpg"></img></div>
-        <div>Masquerade Party, Date1</div>
-        <div>xx Party, Date2</div>
-        <div>yy Party, Date3</div>
-
-    </div>
+<table>
+        <tr>
+<td><img src="/../sample event 4 db populate/Event1/addr1.jpg" style="display:block;"width="100%"</img></td>
 
 
+        <td><img src="/../sample event 4 db populate/Event2/addr2.jpg" style="display:block;" width="100%" ></img></td>
+       <td><img src="/../sample event 4 db populate/Event3/addr3.jpg" style="display:block;" width="100%" ></img></td></tr>
+<tr>
+        <td>Masquerade Party, Date1</td>
+        <td>xx Party, Date2</td>
+        <td>yy Party, Date3</td>
+</tr>
+
+</table>
 </center>
 <a href="parties.php">Click here for more</a>
 

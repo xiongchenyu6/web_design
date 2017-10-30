@@ -1,4 +1,4 @@
-<img class="cover" src="/../../public/img/caro22.jpeg"></img>
+
 <h3 class="title">FAQs</h3>
 
 <img src="/../../public/img/faq.jpeg" width="18%" height="18%" align="left"></img>
@@ -51,5 +51,5 @@
     </center>
     <br><br><br>
 
-    <script type="text/javascript" src="js/check.js"></script>
+    <script type="text/javascript" src="/../public/js/check.js"></script>
 </div>

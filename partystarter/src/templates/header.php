@@ -17,6 +17,7 @@
         <div><a href="parties.php">Parties</a></div>
         <div><a href="about.php">About</a></div>
         <div><a href="support.php">Support</a></div>
+
         <?php
         if (isset($_SESSION['photoUrl'])) {
             $photourl = $_SESSION['photoUrl'];
@@ -29,6 +30,7 @@
         ?>
 
     </div>
+
 </div>
 
-
+<img class="cover" src="/../../public/img/caro22.jpeg"></img>

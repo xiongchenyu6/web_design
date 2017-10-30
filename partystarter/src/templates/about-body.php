@@ -1,4 +1,4 @@
-<img class="cover" src="/../../public/img/caro22.jpeg"></img>
+
 <h3 class="title">About Partystarter</h3>
 
 <img src="/../../public/img/ps_img.jpeg" width="20%" height="20%" align="left"></img>
@@ -40,6 +40,6 @@
     </center>
     <br><br><br>
 
-    <script type="text/javascript" src="js/check.js"></script>
+    <script type="text/javascript" src="/../public/js/check.js"></script>
 </div>
 

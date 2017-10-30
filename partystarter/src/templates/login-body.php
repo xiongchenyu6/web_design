@@ -1,10 +1,22 @@
+
+
+<br><br><div class="login" align="center">
+<img src="/../../public/img/ps_img.jpeg" width="10%" height="10%" align="center"></img><br><br><br>
+<h1> Login / Register </h1><br>
+
 <form action="login.php" method="post">
-    <label for="username">Name</label>
-    <input id="username" name="username"/>
-
-    <label for="password">Password</label>
-    <input id="password" type=="password" name="password"/>
-
-    <input id="submit" type="submit" value="submit" name="submit">
+<div>
+    <label for="username">Name: </label>
+    <input id="username" name="username"/><br><br></div>
+    <div>
+    <label for="password">Password: </label>
+    <input id="password" type=="password" name="password"/><br><br></div>
+<div>
+    <input id="submit" type="submit" value="  Login  " name="submit"></div>
+	
 </form>
-<button id="register"> Register</button>
+
+<div>
+
+ <button id="register">Register</button></div>
+<br><br><br><br></div>

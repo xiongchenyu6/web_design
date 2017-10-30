@@ -73,7 +73,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
     $user = new User("user");
     $createState = $user->createUser($username, $password, $email, $target_file, $self_description);
     if ($createState) {
-        echo("Username is used");
+        echo("Username is taken");
     } else {
         echo("Success");
         $_SESSION["photoUrl"] = $target_file;
