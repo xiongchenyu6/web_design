@@ -12,4 +12,9 @@ echo '<script type="text/javascript">
       </script>';
 die();
 }
+else{
+    require_once(MODULES_PATH . "/User.php");
+    $user = new User("user");
+    $acc = $user->findUser($_SESSION['userId']);
+}
 ?>

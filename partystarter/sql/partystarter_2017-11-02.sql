@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.19)
 # Database: partystarter
-# Generation Time: 2017-10-26 03:08:52 +0000
+# Generation Time: 2017-11-02 02:42:59 +0000
 # ************************************************************
 
 
@@ -29,8 +29,8 @@ CREATE TABLE `guest` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `host_id` int(11) DEFAULT NULL,
-  `payment` tinyint(1) DEFAULT NULL,
-  `comment` int(11) DEFAULT NULL,
+  `payment` tinyint(1) DEFAULT '0',
+  `comment` text,
   `rate` int(11) DEFAULT NULL,
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -64,6 +64,7 @@ CREATE TABLE `host` (
   `maximum` int(11) DEFAULT NULL,
   `theme` varchar(255) DEFAULT NULL,
   `event_name` varchar(255) DEFAULT NULL,
+  `avalaible` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -82,16 +83,20 @@ CREATE TABLE `user` (
   `email` char(255) DEFAULT NULL,
   `profile_photo` text,
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `self_description` text,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `profile_photo`, `create_at`)
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `profile_photo`, `create_at`, `self_description`)
 VALUES
-	(1,'x','x','x','x',NULL);
+	(14,'x','11f6ad8ec52a2984abaafd7c3b516503785c2072','xiong@e.com','uploads/x.png','2017-10-29 11:45:50','x'),
+	(17,'q','22ea1c649c82946aa6e479e1ffd321e4a318b1b0','q@q.com','uploads/q.png','2017-10-29 12:23:05','q'),
+	(18,'w','aff024fe4ab0fece4091de044c58c9ae4233383a','w@w.com','uploads/w.png','2017-11-02 00:01:26','w'),
+	(25,'r','4dc7c9ec434ed06502767136789763ec11d2c4b7','r@r.com','uploads/r.png','2017-11-02 10:05:31','r');
 
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;

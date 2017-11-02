@@ -19,6 +19,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
         $auth = $user->checkUser($username, $password);
         if ($auth) {
             $_SESSION['photoUrl'] = $auth["profile_photo"];
+            $_SESSION["userId"] = $userId;
             echo '<script type="text/javascript">
            window.location = "index.php"
       </script>';

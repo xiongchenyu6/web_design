@@ -1,3 +1,6 @@
+<?php
+$acc = $GLOBALS['acc'];
+?>
 <div class="leftNav">
     <div><button>My Profile</button></div>
     <div><button>My Host</button></div>
@@ -7,23 +10,30 @@
     <div class="profile">
         <table action="register.php" method="post" enctype="multipart/form-data">
             <tr>
-                <td for="username">Name*:</td>
-                <td required id="username" name="username"/></tr>
-            <tr>
-                <td for="email">Email*:</td>
-                <td required id="email" type="email" name="email"/>
+                <td >Name*:</td>
+                <td>
+                    <?php echo($acc['username']); ?>
+                </td>
             </tr>
             <tr>
-                <td for="self_description">About Yourself*:</td>
-                <td required id="self_description" type="text" name="self_description"/>
+                <td >Email*:</td>
+                <td>
+                    <?php echo($acc['email']); ?>
+                </td>
             </tr>
             <tr>
-                <td for="fileToUpload">Profile Photo*:</td>
-                <td required type="file" name="fileToUpload" id="fileToUpload"></tr>
-
+                <td>Self Description*: </td>
+                <td>
+                    <?php echo($acc['self_description']); ?>
+                </td>
+                </td>
+            </tr>
         </table>
     </div>
-    <div>
-
+    <div style="display: none" class="host">
+        <button>Create New</button>
+    </div>
+    <div style="display: none" class="join">
+        <button>PayAll</button>
     </div>
 </div>
