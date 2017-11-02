@@ -6,7 +6,8 @@
  * Time: 2:53 PM
  */
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
-
+require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
 $renderLayoutWithContentFile("management-body.php");
 
 ?>
+<link href="/public/css/management.css" rel="stylesheet"/>

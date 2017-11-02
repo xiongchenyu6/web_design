@@ -31,6 +31,6 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
 <?php else: ?>
 
     <?php $renderLayoutWithContentFile("login-body.php"); ?>
+    <link href="/public/css/login.css" rel="stylesheet"/>
     <script src="public/js/login.js"></script>
-
 <?php endif; ?>

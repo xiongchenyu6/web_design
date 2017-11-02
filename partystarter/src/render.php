@@ -36,13 +36,11 @@ function renderBody($bodyGenerator)
 
     require_once(TEMPLATES_PATH . "/header.php");
 
-    echo "<div id=\"container\">\n"
-        . "\t<div id=\"content\">\n";
-
+    echo "<div class='container' id=\"container\">";
+    $bodyGenerator();
     // close container div
     echo "</div>\n";
     echo "</div>\n";
-    $bodyGenerator();
     require_once(TEMPLATES_PATH . "/footer.php");
 }
 

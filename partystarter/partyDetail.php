@@ -10,3 +10,4 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 $renderLayoutWithContentFile("partyDetail-body.php");
 
 ?>
+<link href="/public/css/partiesDetail.css" rel="stylesheet"/>

@@ -10,3 +10,4 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 $renderLayoutWithContentFile("createnew-body.php");
 
 ?>
+<link href="/public/css/createNew.css" rel="stylesheet"/>

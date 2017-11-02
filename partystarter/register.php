@@ -71,16 +71,18 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
     require_once(MODULES_PATH . "/User.php");
     $user = new User("user");
-    $createState = $user->createUser($username, $password, $email, $target_file, $self_description);
-    if ($createState) {
+    $userId = $user->createUser($username, $password, $email, $target_file, $self_description);
+    if ($userId == 0) {
         echo("Username is taken");
     } else {
         echo("Success");
         $_SESSION["photoUrl"] = $target_file;
+        $_SESSION["userId"] = $userId;
     }
     ?>
 
 <?php else: ?>
     <?php $renderLayoutWithContentFile("register-body.php"); ?>
     <script src="public/js/login.js"></script>
+    <link href="/public/css/register.css" rel="stylesheet"/>
 <?php endif; ?>

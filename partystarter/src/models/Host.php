@@ -8,7 +8,7 @@
 
 require_once(realpath(dirname(__FILE__) . "/../connector.php"));
 
-class Host
+class Host extends Model
 {
 
 }
