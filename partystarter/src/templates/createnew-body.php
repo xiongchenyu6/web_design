@@ -5,16 +5,17 @@
 <h1> Create New Party </h1><br>
 
 
-<form action="" method="post">  <!-- NEED HELP TO WRITE THIS PHP -->
+<form action="createnew.php" method="post">  <!-- NEED HELP TO WRITE THIS PHP -->
 <div>
+
     <label for="partyname">Party Name: </label>
-    <input id="partyname" name="partyname" required/><br><br></div>
+    <input id="partyname" name="event_name" required/><br><br></div>
     <div>
     <label for="datetime">Date & Time: </label>  <!-- NEED TO CHANGE FIELD TYPE -->
-    <input id="datetime" type="datetime" name="datetime" required/><br><br></div>
+    <input id="datetime" type="datetime-local" name="time" required/><br><br></div>
     <div>
     <label for="address">Address:</label>
-    <input id="address" type="address" name="address" required/><br><br></div>
+    <input id="address" type="address" name="place" required/><br><br></div>
 
     <div>
     <label for="region">Region:</label>
@@ -28,19 +29,20 @@
   </select><br><br></div>
     <div>
     <label for="theme">Theme:</label>
-    <input id="theme" type="theme" name="Theme" required/><br><br></div>
+    <input id="theme" type="theme" name="theme" required/><br><br></div>
     <div>
     <label for="desc">Party Details:</label>
-    <input id="desc" type="desc" name="desc" required/><br><br></div>
+    <input id="desc" type="desc" name="description" required/><br><br></div>
     
     <div>
     <label for="price">Ticket Price:</label>
-    <input id="price" type="price" name="price" required/><br><br></div>
+    <input id="price" type="number" name="price" min="0" required/><br><br></div>
     <div>
     <label for="max">No. of Tickets:</label>
-    <input id="max" type="max" name="max" required/><br><br></div>
+    <input id="max" type="number" min="1" name="maximum"  required/><br><br></div>
 
 <div>
+    <input style="display: none" name="user_id" value="<?php echo($_SESSION['userId'])?>"/><br><br></div>
     <input id="submit" type="submit" value="Create Party" name="submit"></div>
 	
 </form><br>

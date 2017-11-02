@@ -10,14 +10,24 @@ require_once(realpath(dirname(__FILE__) . "/../connector.php"));
 
 class Host extends Model
 {
-    public function createHost($user_id,$description,$time,$region,$place,$price,$maximum,$event_name,$theme,$event_name)
+    public function createHost($userData)
     {
-        $stmt = $this->conn->prepare("insert " . $this->tableName . " (`user_id`,`description`,`time`,`region`,`place`,`maximum`,`theme`,`event_name`) values(?,?,?,?,?,?,?,?);");
-        $stmt->bind_param("issssissss", $user_id,$description,$time,$region,$place,$price,$maximum,$event_name,$theme,$event_name);
-        $stmt->execute();
-        $insertId = $stmt->insert_id;
-        $stmt->close();
-        return $insertId;
+        $set = $this->createFields($userData);
+        $sql = "INSERT INTO " .$this->tableName. "  SET $set";
+        $result = $this->conn->query($sql);
+        return $result;
     }
-    public function closeHost(){}
+    public function findHostListByUserId($userId){
+        $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `user_id` = ?");
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        $rows = [];
+        while($row = $result->fetch_assoc())
+        {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 }

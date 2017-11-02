@@ -10,3 +10,4 @@ require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
 $renderLayoutWithContentFile("management-body.php");
 ?>
 <link href="/public/css/management.css" rel="stylesheet"/>
+<script src="/public/js/management.js"></script>

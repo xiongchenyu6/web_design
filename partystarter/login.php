@@ -19,7 +19,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
         $auth = $user->checkUser($username, $password);
         if ($auth) {
             $_SESSION['photoUrl'] = $auth["profile_photo"];
-            $_SESSION["userId"] = $userId;
+            $_SESSION["userId"] = $auth["id"];
             echo '<script type="text/javascript">
            window.location = "index.php"
       </script>';
@@ -30,7 +30,6 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
     }
     ?>
 <?php else: ?>
-
     <?php $renderLayoutWithContentFile("login-body.php"); ?>
     <link href="/public/css/login.css" rel="stylesheet"/>
     <script src="public/js/login.js"></script>

@@ -56,6 +56,19 @@ abstract class Model
         }
         return $rows;
     }
+    public function createFields($usrData){
+        $count= 0;
+        $fields = '';
+        foreach($usrData as $col => $val) {
+            if($col != 'submit'){
+                if ($count++ != 0) $fields .= ', ';
+                $col = mysqli_real_escape_string($this->conn,$col);
+                $val = mysqli_real_escape_string($this->conn,$val);
+                $fields .= "`$col` = '$val'";
+            }
+        }
+        return $fields;
+    }
 }
 
 ?>
