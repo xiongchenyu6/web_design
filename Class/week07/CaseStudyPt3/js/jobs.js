@@ -1,7 +1,7 @@
 const validate = () => {
 
     const now = new Date()
-    const name = document.querySelector('#myName').value
+    const name = docum
     const email = document.querySelector('#myEmail').value
     const date = document.querySelector('#startDate').value
 

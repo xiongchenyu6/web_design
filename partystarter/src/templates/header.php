@@ -13,10 +13,10 @@
 <div class="header">
     <img class="logo" src="/../../public/img/ps_logo.png"></img>
     <div class="nav">
-        <div><a href="index.php">Home</a></div>
-        <div><a href="parties.php">Parties</a></div>
-        <div><a href="about.php">About</a></div>
-        <div><a href="support.php">Support</a></div>
+        <div><a href="/index.php">Home</a></div>
+        <div><a href="/parties.php">Parties</a></div>
+        <div><a href="/about.php">About</a></div>
+        <div><a href="/support.php">Support</a></div>
 
         <?php
         if (isset($_SESSION['photoUrl'])) {
@@ -33,4 +33,3 @@
 
 </div>
 
-<img class="cover" src="/../../public/img/caro22.jpeg"></img>

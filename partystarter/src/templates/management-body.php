@@ -2,10 +2,10 @@
 $acc = $GLOBALS['acc'];
 require_once(MODULES_PATH.'/Host.php');
 require_once(MODULES_PATH.'/Guest.php');
-$myHost = new Host('host');
-$myJoin = new Guest('guest');
-$myHostList = $myHost->findHostListByUserId($_SESSION['userId']);
-$myJoinList = $myJoin->findJoinListByUserId($_SESSION['userId']);
+$host = new Host('host');
+$guest = new Guest('guest');
+$myHostList = $host->findHostListByUserId($_SESSION['userId']);
+$myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
 ?>
 <div class="leftNav">
     <div><button id="profileB">My Profile</button></div>
@@ -55,13 +55,9 @@ $myJoinList = $myJoin->findJoinListByUserId($_SESSION['userId']);
             echo("Price: $price<br>");
             echo("</td>");
             echo("<td>");
-            if($user_id == $_SESSION['userId']){
-                echo("<button disabled onclick='($id)'>");
-                echo("Join");
-                echo("</button>");
-            }else{
-                echo("<button onclick='join($id)'>");
-                echo("Join");
+            if($avalaible == true) {
+                echo("<button onclick='closeParty($id)'>");
+                echo("Close");
                 echo("</button>");
             }
             echo("</td>");
@@ -98,6 +94,9 @@ $myJoinList = $myJoin->findJoinListByUserId($_SESSION['userId']);
         }else{
             echo("<button onclick='join($id)'>");
             echo("Rate");
+            echo("</button>");
+            echo("<button onclick='join($id)'>");
+            echo("Comment");
             echo("</button>");
         }
         echo("</td>");

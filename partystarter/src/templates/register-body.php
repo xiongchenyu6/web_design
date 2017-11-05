@@ -2,7 +2,7 @@
 <br><br><div class="login" align="center">
 <img src="/../../public/img/ps_img.jpeg" width="10%" height="10%" align="center"></img><br><br><br>
 <h1> Sign Up Now </h1><br>
-<form action="register.php" method="post" enctype="multipart/form-data">
+<form onsubmit="return ValidationEvent()" action="register.php" method="post" enctype="multipart/form-data">
 <div>
     <label for="username">Name*:</label>
     <input required id="username" name="username"/> <br><br></div>
@@ -24,6 +24,7 @@
     <label for="fileToUpload">Profile Photo*:</label>
     <input required type="file" name="fileToUpload" id="fileToUpload"> <br><br></div>
 
+    <label id="errorMessage" for="submit"></label>
     <input type="submit" value="Create Account" name="submit">
 
 </form>

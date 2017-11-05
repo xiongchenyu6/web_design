@@ -24,6 +24,19 @@ class Guest extends Model
              return 0;
          }
      }
+    public function postJoin($host_id){
+        $sql = "select * from `guest` where `host_id` = $host_id;";
+        $result= $this->conn->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        require_once(MODULES_PATH.'./Host.php');
+        $host = new Host('host');
+        $thisHost= $host->findById($host_id);
+        if(sizeof($rows) >= $thisHost['maximum']){
+            $host->closeHost($host_id);
+        }
+    }
      public function check($user_id,$host_id) {
 
          $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `user_id` = ? and `host_id` = ?");
@@ -51,4 +64,30 @@ class Guest extends Model
          }
          return $rows;
      }
+     public function findGuestListByHostId($hostId){
+         $stmt = $this->conn->prepare("select * from " . $this->tableName . " inner join `user` on guest.user_id = user.id where host_id = ?");
+         $stmt->bind_param("i", $hostId);
+         $stmt->execute();
+         $result = $stmt->get_result();
+         $stmt->close();
+         $rows = [];
+         while($row = $result->fetch_assoc())
+         {
+             $rows[] = $row;
+         }
+         return $rows;
+     }
+     public function setCommentAndRate($user_id,$host_id,$comment,$rate){
+         $stmt = $this->conn->prepare("update " . $this->tableName . " set `comment` = ?, `rate` = ? where `user_id` = ? and `host_id` = ?;");
+         $stmt->bind_param("siii", $comment,$rate,$user_id,$host_id);
+         $stmt->execute();
+         $result = $stmt->get_result();
+         $stmt->close();
+         if ($result->num_rows > 0) {
+             return true;
+         } else{
+             return false;
+         }
+     }
+
 }

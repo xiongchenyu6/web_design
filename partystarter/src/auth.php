@@ -8,7 +8,7 @@
 
 if (!isset($_SESSION['photoUrl'])) {
 echo '<script type="text/javascript">
-           window.location = "index.php"
+           window.location = "login.php"
       </script>';
 die();
 }

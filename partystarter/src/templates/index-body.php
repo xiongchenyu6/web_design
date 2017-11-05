@@ -1,4 +1,5 @@
 
+<img class="cover" src="/../../public/img/caro22.jpeg"></img>
 <h3 class="title">Finding the next party is as simple as 1,2,3!</h3>
 
 <img src="/../../public/img/ps_img.jpeg" width="10%" height="10%" align="left"></img>

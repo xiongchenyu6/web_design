@@ -19,21 +19,19 @@ $host = new Host('host');
 
     <?php endif; ?>
     <?php
-
     if(isset($parties)){
         $variables = array(
             'parties' => $parties
         );
 
-        $renderLayoutWithContentFile("parties-body.php",$variables);
     }
     else{
         $parties = $host->all();
         $variables = array(
             'parties' => $parties
         );
-        $renderLayoutWithContentFile("parties-body.php",$variables);
     }
+    $renderLayoutWithContentFile("parties-body.php",$variables);
     ?>
     <link href="/public/css/parties.css" rel="stylesheet"/>
     <script src="public/js/parties.js"></script>

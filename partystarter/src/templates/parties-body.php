@@ -19,13 +19,24 @@
        echo("<td>");
        if($user_id == $_SESSION['userId']){
            echo("<button disabled onclick='($id)'>");
-           echo("Join");
+           echo("Owner");
            echo("</button>");
        }else{
-           echo("<button onclick='join($id)'>");
-           echo("Join");
-           echo("</button>");
+           require_once (MODULES_PATH.'/Guest.php');
+           $guest = new Guest('guest');
+           if($guest->check($_SESSION['userId'],$id)){
+               echo("<button disabled onclick='join($id)'>");
+               echo("Joined");
+               echo("</button>");
+           }
+           else{
+               echo("<button onclick='join($id)'>");
+               echo("Join");
+               echo("</button>");}
        }
+       echo("<button onclick='window.location.href= \"partyDetail.php/?id=$id\" '>");
+       echo("Detail");
+       echo("</button>");
        echo("</td>");
        echo("</tr>");
    }
