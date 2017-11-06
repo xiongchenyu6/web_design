@@ -11,24 +11,27 @@
     <p>What are you waiting for? Check out our <a href="parties.php">parties</a> or <a href="register.php">register</a>
         as a member and unlock your limitless partying opportunities with us now!</p><br><br>
 </div>
-<h3 class="title">Our Upcoming Parties</h3>
+<h3 class="title">Our Past Parties</h3>
 <center>
 
-    <!--- write for layout only. fetch from db later -->
+
 <table>
         <tr>
-<td><img src="/../sample event 4 db populate/Event1/addr1.jpg" style="display:block;"width="100%"</img></td>
+<td><img src="/../../public/img/past1.jpeg" style="display:block;"width="100%"</img></td>
 
 
-        <td><img src="/../sample event 4 db populate/Event2/addr2.jpg" style="display:block;" width="100%" ></img></td>
-       <td><img src="/../sample event 4 db populate/Event3/addr3.jpg" style="display:block;" width="100%" ></img></td></tr>
+        <td><img src="/../../public/img/past2.jpeg" style="display:block;" width="100%" ></img></td>
+       <td><img src="/../../public/img/past3.jpeg" style="display:block;" width="100%" ></img></td></tr>
 <tr>
-        <td>Masquerade Party, Date1</td>
-        <td>xx Party, Date2</td>
-        <td>yy Party, Date3</td>
-</tr>
+        <td>Halloween Party @ W Singapore<br>
+	<b>Over 200 Guests!!</b></td>
+        <td>Masquerade Party @ Genting Hotel Jurong<br>
+<b>150+ Guests!</b></td>
+        <td>Pool Party @ Bar Canary<br>
+<b>60 Guests!</b></td>
+</tr><br>
 
 </table>
-</center>
-<a href="parties.php">Click here for more</a>
+</center><div align="right">
+<a href="parties.php">View our upcoming parties</a><br><br><br></div>
 
