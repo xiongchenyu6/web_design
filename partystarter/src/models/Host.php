@@ -31,8 +31,8 @@ class Host extends Model
         return $rows;
     }
     public function closeHost($host_id){
-        $stmt = $this->conn->prepare("update " . $this->tableName . " ( SET `avalaible`= false where `id` = $host_id;");
-        $stmt->bind_param("ii",$host_id);
+        $stmt = $this->conn->prepare("update " . $this->tableName . " SET `avalaible`= false where `id` = ?;");
+        $stmt->bind_param("i",$host_id);
         $stmt->execute();
         $stmt->close();
     }

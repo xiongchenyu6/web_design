@@ -23,6 +23,11 @@ if($type == "guest"): ?>
             echo "<span>$self_description</span>";
             echo "<span>$comment</span>";
             echo "<span>$rate</span>";
+            if($payment == true){
+                echo "<span>Paid</span>";
+            }else{
+                echo "<span>Unpaid</span>";
+            }
             if($user_id == $_SESSION['userId']){
                 $isGuest = true;
                 if($comment == null){

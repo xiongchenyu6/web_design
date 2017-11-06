@@ -89,5 +89,17 @@ class Guest extends Model
              return false;
          }
      }
+     public function leaveHost($id){
+         $stmt = $this->conn->prepare("delete " . $this->tableName . " where `id` = ?;");
+         $stmt->bind_param("i",$id);
+         $stmt->execute();
+         $stmt->close();
+     }
 
+    public function payHost($id){
+        $stmt = $this->conn->prepare("update " . $this->tableName . " SET `payment`= true where `id` = ?;");
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $stmt->close();
+    }
 }

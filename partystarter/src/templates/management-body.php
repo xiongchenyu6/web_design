@@ -1,7 +1,5 @@
 <?php
 $acc = $GLOBALS['acc'];
-require_once(MODULES_PATH.'/Host.php');
-require_once(MODULES_PATH.'/Guest.php');
 $host = new Host('host');
 $guest = new Guest('guest');
 $myHostList = $host->findHostListByUserId($_SESSION['userId']);
@@ -56,8 +54,12 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
             echo("</td>");
             echo("<td>");
             if($avalaible == true) {
-                echo("<button onclick='closeParty($id)'>");
+                echo("<button onclick='request(\"close\",$id)'>");
                 echo("Close");
+                echo("</button>");
+            }else{
+                echo("<button disabled>");
+                echo("Closed");
                 echo("</button>");
             }
             echo("</td>");
@@ -85,24 +87,22 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
         echo("</td>");
         echo("<td>");
         if($payment == false){
-            echo("<button onclick='($id)'>");
+            echo("<button onclick='request(\"pay\",$id)'>");
             echo("Pay");
             echo("</button>");
-            echo("<button onclick='($id)'>");
+            echo("<button onclick='request(\"cancel\",$id)'>");
             echo("cancel");
             echo("</button>");
         }else{
-            echo("<button onclick='join($id)'>");
-            echo("Rate");
-            echo("</button>");
-            echo("<button onclick='join($id)'>");
-            echo("Comment");
+            echo("<button disabled>");
+            echo("Paid");
             echo("</button>");
         }
+        echo("<button onclick='window.location.href= \"partyDetail.php/?id=$id\" '>");
+        echo("Detail");
+        echo("</button>");
         echo("</td>");
         echo("</tr>");
     }
     ?>
-    <br>
-    <button>PayAll</button>
 </div>

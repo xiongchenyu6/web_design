@@ -5,6 +5,7 @@ function join(id) {
         var params = `id=${id}`;
         const callback = (data) =>{
             alert(data)
+            window.location.reload()
         }
         makepost(url,params,callback);
     }

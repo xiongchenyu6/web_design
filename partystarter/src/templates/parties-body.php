@@ -30,16 +30,23 @@
                echo("</button>");
            }
            else{
-               echo("<button onclick='join($id)'>");
-               echo("Join");
-               echo("</button>");}
+               if($avalaible == true){
+                   echo("<button onclick='join($id)'>");
+                   echo("Join");
+                   echo("</button>");
+               }else{
+
+               echo("<button disabled'>");
+               echo("Closed");
+               echo("</button>");
+           }
        }
        echo("<button onclick='window.location.href= \"partyDetail.php/?id=$id\" '>");
        echo("Detail");
        echo("</button>");
        echo("</td>");
        echo("</tr>");
-   }
+   }}
     ?>
 </table>
 
