@@ -3,26 +3,39 @@
 $isGuest = false;
 $isComment = false;
 if($type == "guest"): ?>
+    <h>Host Info</h>
     <div class="hostInfo">
         <?php
         extract($hostInfo);
         echo "<img src='/$profile_photo'>";
-        echo "<span>$username</span>";
-        echo "<span>$email</span>";
-        echo "<span>$self_description</span>";
+        echo "<br>";
+        echo "<span>Host User name :$username</span>";
+        echo "<br>";
+        echo "<span>Host email:$email</span>";
+        echo "<br>";
+        echo "<span>Host self description:$self_description</span>";
+        echo "<br>";
         ?>
     </div>
     <hr>
     <div class="guestsList">
+        <h>Guest List</h>
         <?php
         foreach ($guestList as $guest){
             extract($guest);
+            echo "<br>";
             echo "<img src='/$profile_photo'>";
-            echo "<span>$username</span>";
-            echo "<span>$email</span>";
-            echo "<span>$self_description</span>";
-            echo "<span>$comment</span>";
-            echo "<span>$rate</span>";
+            echo "<br>";
+            echo "<span>Guest username: $username</span>";
+            echo "<br>";
+            echo "<span>Guest email: $email</span>";
+            echo "<br>";
+            echo "<span>Guest self description: $self_description</span>";
+            echo "<br>";
+            echo "<span>Guest comment: $comment</span>";
+            echo "<br>";
+            echo "<span>Guest rate: $rate</span>";
+            echo "<br>";
             if($payment == true){
                 echo "<span>Paid</span>";
             }else{
@@ -41,6 +54,7 @@ if($type == "guest"): ?>
     </div>
     <hr>
     <div class="hostDetails">
+        <h>Party Info</h>
         <table>
             <?php
             extract($host);
@@ -80,6 +94,7 @@ if($type == "guest"): ?>
     </div>
     <hr>
     <div class="commentsRate">
+        <h1>Comments and rate</h1>
         <!-- rate and comments -->
         <?php if($isGuest && !$isComment): ?>
         <form action="/partyDetail.php" method="post">
