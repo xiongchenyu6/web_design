@@ -89,17 +89,30 @@ class Guest extends Model
              return false;
          }
      }
-     public function leaveHost($id){
-         $stmt = $this->conn->prepare("delete " . $this->tableName . " where `id` = ?;");
-         $stmt->bind_param("i",$id);
+     public function leaveHost($id,$user_id){
+         $stmt = $this->conn->prepare("delete from " . $this->tableName . " where `host_id` = ? and `user_id` = ?;");
+         $stmt->bind_param("ii",$id,$user_id);
          $stmt->execute();
          $stmt->close();
      }
 
-    public function payHost($id){
-        $stmt = $this->conn->prepare("update " . $this->tableName . " SET `payment`= true where `id` = ?;");
-        $stmt->bind_param("i",$id);
+    public function payHost($id,$user_id){
+        $stmt = $this->conn->prepare("update " . $this->tableName . " SET `payment`= true where `host_id` = ? and `user_id` = ?;");
+        $stmt->bind_param("ii",$id,$user_id);
         $stmt->execute();
         $stmt->close();
+
+        require_once(MODULES_PATH . "/User.php");
+        $user = new User("user");
+        $endUser =  $user->byId($user_id);
+
+        $to      = $endUser['email'];
+        $subject = 'Payment confirmation';
+        $message = 'fd';
+        $headers = 'From: f32ee@localhost' . "\r\n" .
+            'Reply-To: f32ee@localhost' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers,'-ff32ee@localhost');
     }
 }

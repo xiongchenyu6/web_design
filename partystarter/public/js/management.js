@@ -54,13 +54,12 @@ guestButton.addEventListener('click',showGuess);
 
 function request(type,host_id) {
 
-    if (confirm("do you really want to close the party?" ) == true) {
+    if (confirm(`do you really want to ${type} the party?` ) == true) {
         var url = "/management.php";
         var params = `${type}=1&id=${host_id}`;
         makepost(url,params,alert)
     }
 }
-
 function makepost(url,params,callback) {
 
     var http = new XMLHttpRequest();
@@ -68,7 +67,7 @@ function makepost(url,params,callback) {
     //send the proper header information along with the request
     http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange = function() { //call a function when the state changes.
-        window.location.reload()
+        console.log(http.response)
     }
     http.send(params);
 }

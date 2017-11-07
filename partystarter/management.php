@@ -15,7 +15,7 @@ require_once(MODULES_PATH.'/Guest.php');
     <?php
     if($_POST['pay'] == 1){
         $guest = new Guest('guest');
-        $guest->payHost($_POST['id']);
+        $guest->payHost($_POST['id'],$_SESSION['userId']);
     }
     ?>
 
@@ -23,7 +23,7 @@ require_once(MODULES_PATH.'/Guest.php');
     <?php
     if($_POST['cancel'] == 1){
         $guest = new Guest('guest');
-        $guest->leaveHost($_POST['id']);
+        $guest->leaveHost($_POST['id'],$_SESSION['userId']);
     }
     ?>
 <?php elseif(isset($_POST['close'])): ?>

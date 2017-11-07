@@ -87,10 +87,10 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
         echo("</td>");
         echo("<td>");
         if($payment == false){
-            echo("<button onclick='request(\"pay\",$id)'>");
+            echo("<button onclick='request(\"pay\",$id,$user_id)'>");
             echo("Pay");
             echo("</button>");
-            echo("<button onclick='request(\"cancel\",$id)'>");
+            echo("<button onclick='request(\"cancel\",$id,$user_id)'>");
             echo("cancel");
             echo("</button>");
         }else{
