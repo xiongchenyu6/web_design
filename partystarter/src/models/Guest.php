@@ -83,11 +83,7 @@ class Guest extends Model
          $stmt->execute();
          $result = $stmt->get_result();
          $stmt->close();
-         if ($result->num_rows > 0) {
-             return true;
-         } else{
-             return false;
-         }
+         return true;
      }
      public function leaveHost($id,$user_id){
          $stmt = $this->conn->prepare("delete from " . $this->tableName . " where `host_id` = ? and `user_id` = ?;");
