@@ -10,22 +10,18 @@ class User extends Model
         $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `username` = ? and `password` = ?");
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-        }
+        $stmt->store_result();
+        $row = $this->fetchAssocStatement($stmt);
         $stmt->close();
         return $row;
     }
 
-    public function createUser($username, $password, $email, $profile_photo, $self_description)
+    public function createUser($userData)
     {
-        $stmt = $this->conn->prepare("insert " . $this->tableName . " (`username`,`password`,`email`,`profile_photo`,`self_description`) values(?,?,?,?,?);");
-        $stmt->bind_param("sssss", $username, $password, $email, $profile_photo, $self_description);
-        $stmt->execute();
-        $insertId = $stmt->insert_id;
-        $stmt->close();
-        return $insertId;
+        $set = $this->createFields($userData);
+        $sql = "INSERT INTO " .$this->tableName. "  SET $set;";
+        $this->conn->query($sql);
+        return $this->conn->insert_id;
     }
 
     public function findUser($id)
@@ -33,10 +29,8 @@ class User extends Model
         $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `id` = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-        }
+        $stmt->store_result();
+        $row = $this->fetchAssocStatement($stmt);
         $stmt->close();
         return $row;
     }

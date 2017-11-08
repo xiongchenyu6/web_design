@@ -80,6 +80,7 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
         echo("</td>");
         echo("");
         echo("<td>");
+        echo("<br>");
         echo("Theme: $theme<br>");
         echo("Date: $time<br>");
         echo("Region: $region<br>");

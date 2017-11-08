@@ -55,33 +55,35 @@ class Guest extends Model
          $stmt = $this->conn->prepare("select * from " . $this->tableName . " inner join `host` on guest.host_id = host.id where guest.user_id = ?");
          $stmt->bind_param("i", $userId);
          $stmt->execute();
-         $result = $stmt->get_result();
-         $stmt->close();
-         $rows = [];
-         while($row = $result->fetch_assoc())
+         $stmt->store_result();
+         $rows =[];
+         while($row = $this->fetchassocstatement($stmt))
          {
              $rows[] = $row;
          }
+         $stmt->close();
          return $rows;
      }
      public function findGuestListByHostId($hostId){
          $stmt = $this->conn->prepare("select * from " . $this->tableName . " inner join `user` on guest.user_id = user.id where host_id = ?");
          $stmt->bind_param("i", $hostId);
          $stmt->execute();
-         $result = $stmt->get_result();
-         $stmt->close();
+         $stmt->store_result();
          $rows = [];
-         while($row = $result->fetch_assoc())
+         while($row = $this->fetchassocstatement($stmt))
          {
              $rows[] = $row;
          }
+         $stmt->close();
          return $rows;
      }
+
      public function setCommentAndRate($user_id,$host_id,$comment,$rate){
          $stmt = $this->conn->prepare("update " . $this->tableName . " set `comment` = ?, `rate` = ? where `user_id` = ? and `host_id` = ?;");
          $stmt->bind_param("siii", $comment,$rate,$user_id,$host_id);
          $stmt->execute();
-         $result = $stmt->get_result();
+         $stmt->store_result();
+         $row = $this->fetchassocstatement($stmt);
          $stmt->close();
          return true;
      }
@@ -89,6 +91,7 @@ class Guest extends Model
          $stmt = $this->conn->prepare("delete from " . $this->tableName . " where `host_id` = ? and `user_id` = ?;");
          $stmt->bind_param("ii",$id,$user_id);
          $stmt->execute();
+         $stmt->store_result();
          $stmt->close();
      }
 
@@ -96,6 +99,7 @@ class Guest extends Model
         $stmt = $this->conn->prepare("update " . $this->tableName . " SET `payment`= true where `host_id` = ? and `user_id` = ?;");
         $stmt->bind_param("ii",$id,$user_id);
         $stmt->execute();
+        $stmt->store_result();
         $stmt->close();
 
         require_once(MODULES_PATH . "/User.php");

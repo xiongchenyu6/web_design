@@ -71,7 +71,8 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
     require_once(MODULES_PATH . "/User.php");
     $user = new User("user");
-    $userId = $user->createUser($username, $password, $email, $target_file, $self_description);
+    unset($_POST['password2']);
+    $userId = $user->createUser($_POST);
     if ($userId == 0) {
         echo("Username is taken");
     } else {

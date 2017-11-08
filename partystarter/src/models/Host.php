@@ -21,19 +21,20 @@ class Host extends Model
         $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `user_id` = ?");
         $stmt->bind_param("i", $userId);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
+        $stmt->store_result();
         $rows = [];
-        while($row = $result->fetch_assoc())
+        while($row = $this->fetchAssocStatement($stmt))
         {
             $rows[] = $row;
         }
+        $stmt->close();
         return $rows;
     }
     public function closeHost($host_id){
         $stmt = $this->conn->prepare("update " . $this->tableName . " SET `avalaible`= false where `id` = ?;");
         $stmt->bind_param("i",$host_id);
         $stmt->execute();
+        $stmt->store_result();
         $stmt->close();
     }
 }
