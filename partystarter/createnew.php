@@ -25,5 +25,5 @@ require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
     <?php
     $renderLayoutWithContentFile("createnew-body.php");
     ?>
-    <link href="/public/css/createNew.css" rel="stylesheet"/>
+    <link href="./public/css/createNew.css" rel="stylesheet"/>
 <?php endif; ?>

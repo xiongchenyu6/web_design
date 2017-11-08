@@ -21,5 +21,5 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 $renderLayoutWithContentFile("index-body.php");
 ?>
 
-<link href="/public/css/index.css" rel="stylesheet"/>
-<script src="public/js/login.js"></script>
+<link href="./public/css/index.css" rel="stylesheet"/>
+<script src="./public/js/login.js"></script>

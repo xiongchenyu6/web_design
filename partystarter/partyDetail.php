@@ -47,12 +47,11 @@ $guest = new Guest('guest');
             $renderLayoutWithContentFile("partyDetail-body.php",$variables);
         }
         ?>
-        <link href="/public/css/partiesDetail.css" rel="stylesheet"/>
-        <script src="/public/js/partyDetail.js"></script>
+        <link href="./public/css/partiesDetail.css" rel="stylesheet"/>
+        <script src="./public/js/partyDetail.js"></script>
     <?php else: ?>
         <?php
         echo("wrong Url");
         ?>
     <?php endif; ?>
 <?php endif; ?>
-

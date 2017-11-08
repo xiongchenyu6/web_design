@@ -33,6 +33,6 @@ $host = new Host('host');
     }
     $renderLayoutWithContentFile("parties-body.php",$variables);
     ?>
-    <link href="/public/css/parties.css" rel="stylesheet"/>
-    <script src="public/js/parties.js"></script>
+    <link href="./public/css/parties.css" rel="stylesheet"/>
+    <script src="./public/js/parties.js"></script>
 <?php endif; ?>

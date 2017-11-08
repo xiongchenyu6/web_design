@@ -9,5 +9,5 @@
 
 </footer>
 </body>
-<script src="/../../public/js/layout.js"></script>
+<script src="./../../public/js/layout.js"></script>
 </html>

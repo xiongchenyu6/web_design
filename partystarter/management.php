@@ -39,6 +39,6 @@ require_once(MODULES_PATH.'/Guest.php');
     <?php
     $renderLayoutWithContentFile("management-body.php");
     ?>
-    <link href="/public/css/management.css" rel="stylesheet"/>
-    <script src="/public/js/management.js"></script>
+    <link href="./public/css/management.css" rel="stylesheet"/>
+    <script src="./public/js/management.js"></script>
 <?php endif; ?>

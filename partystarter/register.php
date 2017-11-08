@@ -83,6 +83,6 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
 <?php else: ?>
     <?php $renderLayoutWithContentFile("register-body.php"); ?>
-    <script src="public/js/login.js"></script>
-    <link href="/public/css/register.css" rel="stylesheet"/>
+    <script src="./public/js/login.js"></script>
+    <link href="./public/css/register.css" rel="stylesheet"/>
 <?php endif; ?>
