@@ -105,10 +105,10 @@ class Guest extends Model
         $to      = $endUser['email'];
         $subject = 'Payment confirmation';
         $message = 'fd';
-        $headers = 'From: f32ee@localhost' . "\r\n" .
-            'Reply-To: f32ee@localhost' . "\r\n" .
+        $headers = 'From: f35ee@localhost' . "\r\n" .
+            'Reply-To: f35ee@localhost' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
 
-        mail($to, $subject, $message, $headers,'-ff32ee@localhost');
+        mail($to, $subject, $message, $headers,'-ff35ee@localhost');
     }
 }
