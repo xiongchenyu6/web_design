@@ -11,7 +11,7 @@
 
 <body>
 <div class="header">
-    <img class="logo" src="./../../public/img/ps_logo.png"></img>
+    <img class="logo" src="./public/img/ps_logo.png"></img>
     <div class="nav">
         <div><a href="/index.php">Home</a></div>
         <div><a href="/parties.php">Parties</a></div>

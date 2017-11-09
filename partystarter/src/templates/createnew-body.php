@@ -1,6 +1,6 @@
 <br><br>
 <div class="createnew" align="center">
-    <img src="./../../public/img/ps_img.jpeg" width="10%" height="10%" align="center"><br><br><br>
+    <img src="./public/img/ps_img.jpeg" width="10%" height="10%" align="center"><br><br><br>
     <h1> Create New Party </h1><br>
 
 

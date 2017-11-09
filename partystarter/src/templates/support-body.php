@@ -1,6 +1,6 @@
 <h3 class="title">FAQs</h3>
 
-<img src="/../../public/img/faq.jpeg" width="18%" height="18%" align="left"></img>
+<img src="./public/img/faq.jpeg" width="18%" height="18%" align="left"></img>
 
 <div class="longtext">
 
@@ -50,5 +50,4 @@
     </center>
     <br><br><br>
 
-    <script type="text/javascript" src="/../public/js/check.js"></script>
 </div>
