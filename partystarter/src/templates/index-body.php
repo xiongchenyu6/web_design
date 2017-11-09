@@ -1,7 +1,7 @@
 <img class="cover" src="/../../public/img/caro22.jpeg"></img>
 <h3 class="title">Finding the next party is as simple as 1,2,3!</h3>
 
-<img src="/../../public/img/ps_img.jpeg" width="10%" height="10%" align="left"></img>
+<img src="./../../public/img/ps_img.jpeg" width="10%" height="10%" align="left"></img>
 
 <div align="right">
     <p>If you like to party, Partystarter is the right place for you! Partystarter is an one-stop portal by bringing
@@ -16,11 +16,11 @@
 
     <table>
         <tr>
-            <td><img src="/../../public/img/past1.jpeg" style="display:block;" width="100%"</img></td>
+            <td><img src="./../../public/img/past1.jpeg" style="display:block;" width="100%"</img></td>
 
 
-            <td><img src="/../../public/img/past2.jpeg" style="display:block;" width="100%"></img></td>
-            <td><img src="/../../public/img/past3.jpeg" style="display:block;" width="100%"></img></td>
+            <td><img src="./../../public/img/past2.jpeg" style="display:block;" width="100%"></img></td>
+            <td><img src="./../../public/img/past3.jpeg" style="display:block;" width="100%"></img></td>
         </tr>
         <tr>
             <td>Halloween Party @ W Singapore<br>

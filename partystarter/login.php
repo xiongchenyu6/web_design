@@ -21,7 +21,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
             $_SESSION['photoUrl'] = $auth["profile_photo"];
             $_SESSION["userId"] = $auth["id"];
             echo '<script type="text/javascript">
-           window.location = "index.php"
+           window.location = "/index.php"
       </script>';
 
         } else {

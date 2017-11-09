@@ -18,7 +18,7 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
 </div>
 <div class="main">
     <div class="profile">
-        <table action="register.php" method="post" enctype="multipart/form-data">
+        <table action="/register.php" method="post" enctype="multipart/form-data">
             <tr>
                 <td>Name*:</td>
                 <td>
@@ -73,7 +73,7 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
         }
         ?>
     </table>
-    <a href="createnew.php">
+    <a href="/createnew.php">
         <button>Create New</button>
     </a>
 </div>

@@ -12,7 +12,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
     <?php
     session_destroy();
     echo '<script type="text/javascript">
-           window.location = "index.php"
+           window.location = "/index.php"
       </script>';
     ?>
 <?php endif; ?>

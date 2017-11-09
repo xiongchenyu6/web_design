@@ -1,6 +1,6 @@
 <h3 class="title">Our Upcoming Parties</h3>
 
-<form action="parties.php" method="get">
+<form action="/parties.php" method="get">
     <div>
         <label for="search">search</label>
         <input id="search" name="search"/><br><br></div>

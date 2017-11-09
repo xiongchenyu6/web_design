@@ -1,8 +1,8 @@
 <br><br>
 <div class="login" align="center">
-    <img src="/../../public/img/ps_img.jpeg" width="10%" height="10%" align="center"></img><br><br><br>
+    <img src="./../../public/img/ps_img.jpeg" width="10%" height="10%" align="center"></img><br><br><br>
     <h1> Sign Up Now </h1><br>
-    <form onsubmit="return validate();" action="register.php" method="post" enctype="multipart/form-data">
+    <form onsubmit="return validate();" action="/register.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="username">Name*:</label>
             <input required id="username" name="username"/> <br><br></div>
