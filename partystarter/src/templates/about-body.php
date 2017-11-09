@@ -1,4 +1,3 @@
-
 <h3 class="title">About Partystarter</h3>
 
 <img src="/../../public/img/ps_img.jpeg" width="20%" height="20%" align="left"></img>

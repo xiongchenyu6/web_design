@@ -1,4 +1,3 @@
-
 <img class="cover" src="/../../public/img/caro22.jpeg"></img>
 <h3 class="title">Finding the next party is as simple as 1,2,3!</h3>
 
@@ -15,23 +14,26 @@
 <center>
 
 
-<table>
+    <table>
         <tr>
-<td><img src="/../../public/img/past1.jpeg" style="display:block;"width="100%"</img></td>
+            <td><img src="/../../public/img/past1.jpeg" style="display:block;" width="100%"</img></td>
 
 
-        <td><img src="/../../public/img/past2.jpeg" style="display:block;" width="100%" ></img></td>
-       <td><img src="/../../public/img/past3.jpeg" style="display:block;" width="100%" ></img></td></tr>
-<tr>
-        <td>Halloween Party @ W Singapore<br>
-	<b>Over 200 Guests!!</b></td>
-        <td>Masquerade Party @ Genting Hotel Jurong<br>
-<b>150+ Guests!</b></td>
-        <td>Pool Party @ Bar Canary<br>
-<b>60 Guests!</b></td>
-</tr><br>
+            <td><img src="/../../public/img/past2.jpeg" style="display:block;" width="100%"></img></td>
+            <td><img src="/../../public/img/past3.jpeg" style="display:block;" width="100%"></img></td>
+        </tr>
+        <tr>
+            <td>Halloween Party @ W Singapore<br>
+                <b>Over 200 Guests!!</b></td>
+            <td>Masquerade Party @ Genting Hotel Jurong<br>
+                <b>150+ Guests!</b></td>
+            <td>Pool Party @ Bar Canary<br>
+                <b>60 Guests!</b></td>
+        </tr>
+        <br>
 
-</table>
-</center><div align="right">
-<a href="parties.php">View our upcoming parties</a><br><br><br></div>
+    </table>
+</center>
+<div align="right">
+    <a href="parties.php">View our upcoming parties</a><br><br><br></div>
 

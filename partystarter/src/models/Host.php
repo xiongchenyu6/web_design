@@ -13,28 +13,48 @@ class Host extends Model
     public function createHost($userData)
     {
         $set = $this->createFields($userData);
-        $sql = "INSERT INTO " .$this->tableName. "  SET $set";
+        $sql = "INSERT INTO " . $this->tableName . "  SET $set";
         $result = $this->conn->query($sql);
         return $result;
     }
-    public function findHostListByUserId($userId){
+
+    public function findHostListByUserId($userId)
+    {
         $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `user_id` = ?");
         $stmt->bind_param("i", $userId);
         $stmt->execute();
         $stmt->store_result();
         $rows = [];
-        while($row = $this->fetchAssocStatement($stmt))
-        {
+        while ($row = $this->fetchAssocStatement($stmt)) {
             $rows[] = $row;
         }
         $stmt->close();
         return $rows;
     }
-    public function closeHost($host_id){
+
+    public function closeHost($host_id)
+    {
         $stmt = $this->conn->prepare("update " . $this->tableName . " SET `avalaible`= false where `id` = ?;");
-        $stmt->bind_param("i",$host_id);
+        $stmt->bind_param("i", $host_id);
         $stmt->execute();
         $stmt->store_result();
         $stmt->close();
+    }
+    public function searchHost($word){
+        $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `description` like ? or
+        `region` like ? or
+        `theme` like ? or
+        `event_name` like ?
+        ");
+        $likeWord = "%$word%";
+        $stmt->bind_param("ssss", $likeWord, $likeWord, $likeWord, $likeWord);
+        $stmt->execute();
+        $stmt->store_result();
+        $rows = [];
+        while ($row = $this->fetchAssocStatement($stmt)) {
+            $rows[] = $row;
+        }
+        $stmt->close();
+        return $rows;
     }
 }

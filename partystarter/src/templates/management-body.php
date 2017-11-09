@@ -6,27 +6,33 @@ $myHostList = $host->findHostListByUserId($_SESSION['userId']);
 $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
 ?>
 <div class="leftNav">
-    <div><button id="profileB">My Profile</button></div>
-    <div><button id="hostB">My Host</button></div>
-    <div><button id="joinB">My Join</button></div>
+    <div>
+        <button id="profileB">My Profile</button>
+    </div>
+    <div>
+        <button id="hostB">My Host</button>
+    </div>
+    <div>
+        <button id="joinB">My Join</button>
+    </div>
 </div>
 <div class="main">
     <div class="profile">
         <table action="register.php" method="post" enctype="multipart/form-data">
             <tr>
-                <td >Name*:</td>
+                <td>Name*:</td>
                 <td>
                     <?php echo($acc['username']); ?>
                 </td>
             </tr>
             <tr>
-                <td >Email*:</td>
+                <td>Email*:</td>
                 <td>
                     <?php echo($acc['email']); ?>
                 </td>
             </tr>
             <tr>
-                <td>Self Description*: </td>
+                <td>Self Description*:</td>
                 <td>
                     <?php echo($acc['self_description']); ?>
                 </td>
@@ -38,7 +44,7 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
 <div style="display: none" class="host">
     <table>
         <?php
-        foreach($myHostList as $party){
+        foreach ($myHostList as $party) {
             extract($party);
             echo("<tr>");
             echo("<td>");
@@ -53,11 +59,11 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
             echo("Price: $price<br>");
             echo("</td>");
             echo("<td>");
-            if($avalaible == true) {
+            if ($avalaible == true) {
                 echo("<button onclick='request(\"close\",$id)'>");
                 echo("Close");
                 echo("</button>");
-            }else{
+            } else {
                 echo("<button disabled>");
                 echo("Closed");
                 echo("</button>");
@@ -67,11 +73,13 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
         }
         ?>
     </table>
-    <a href="createnew.php"><button>Create New</button></a>
+    <a href="createnew.php">
+        <button>Create New</button>
+    </a>
 </div>
 <div style="display: none" class="join">
     <?php
-    foreach($myJoinList as $party){
+    foreach ($myJoinList as $party) {
         extract($party);
         echo("<tr>");
         echo("<td>");
@@ -87,14 +95,14 @@ $myJoinList = $guest->findJoinListByUserId($_SESSION['userId']);
         echo("Price: $price<br>");
         echo("</td>");
         echo("<td>");
-        if($payment == false){
+        if ($payment == false) {
             echo("<button onclick='request(\"pay\",$id,$user_id)'>");
             echo("Pay");
             echo("</button>");
             echo("<button onclick='request(\"cancel\",$id,$user_id)'>");
             echo("cancel");
             echo("</button>");
-        }else{
+        } else {
             echo("<button disabled>");
             echo("Paid");
             echo("</button>");

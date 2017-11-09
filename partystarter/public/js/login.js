@@ -3,5 +3,5 @@ function register() {
     window.location.href = "register.php"
 }
 
-var registerDom =  document.getElementById('register');
-registerDom? registerDom.addEventListener('click', register) : null ;
+var registerDom = document.getElementById('register');
+registerDom ? registerDom.addEventListener('click', register) : null;

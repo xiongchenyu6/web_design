@@ -7,12 +7,11 @@
  */
 
 if (!isset($_SESSION['photoUrl'])) {
-echo '<script type="text/javascript">
+    echo '<script type="text/javascript">
            window.location = "login.php"
       </script>';
-die();
-}
-else{
+    die();
+} else {
     require_once(MODULES_PATH . "/User.php");
     $user = new User("user");
     $acc = $user->findUser($_SESSION['userId']);

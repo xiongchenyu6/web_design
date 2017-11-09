@@ -19,7 +19,7 @@ class User extends Model
     public function createUser($userData)
     {
         $set = $this->createFields($userData);
-        $sql = "INSERT INTO " .$this->tableName. "  SET $set;";
+        $sql = "INSERT INTO " . $this->tableName . "  SET $set;";
         $this->conn->query($sql);
         return $this->conn->insert_id;
     }

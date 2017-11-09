@@ -47,6 +47,23 @@ abstract class Model
         return $row;
     }
 
+    function fetchAssocStatement($stmt)
+    {
+        if ($stmt->num_rows > 0) {
+            $result = array();
+            $md = $stmt->result_metadata();
+            $params = array();
+            while ($field = $md->fetch_field()) {
+                $params[] = &$result[$field->name];
+            }
+            call_user_func_array(array($stmt, 'bind_result'), $params);
+            if ($stmt->fetch())
+                return $result;
+        }
+
+        return null;
+    }
+
     public function all()
     {
         $sql = "SELECT * FROM " . $this->tableName;
@@ -56,35 +73,20 @@ abstract class Model
         }
         return $rows;
     }
-    public function createFields($usrData){
-        $count= 0;
+
+    public function createFields($usrData)
+    {
+        $count = 0;
         $fields = '';
-        foreach($usrData as $col => $val) {
-            if($col != 'submit'){
+        foreach ($usrData as $col => $val) {
+            if ($col != 'submit') {
                 if ($count++ != 0) $fields .= ', ';
-                $col = mysqli_real_escape_string($this->conn,$col);
-                $val = mysqli_real_escape_string($this->conn,$val);
+                $col = mysqli_real_escape_string($this->conn, $col);
+                $val = mysqli_real_escape_string($this->conn, $val);
                 $fields .= "`$col` = '$val'";
             }
         }
         return $fields;
-    }
-    function fetchAssocStatement($stmt)
-    {
-        if($stmt->num_rows>0)
-        {
-            $result = array();
-            $md = $stmt->result_metadata();
-            $params = array();
-            while($field = $md->fetch_field()) {
-                $params[] = &$result[$field->name];
-            }
-            call_user_func_array(array($stmt, 'bind_result'), $params);
-            if($stmt->fetch())
-                return $result;
-        }
-
-        return null;
     }
 }
 

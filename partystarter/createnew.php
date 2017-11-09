@@ -14,11 +14,10 @@ require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
     require_once(MODULES_PATH . "/Host.php");
     $host = new Host('host');
     $result = $host->createHost($_POST);
-    if($result){
-       echo ("success");
-    }
-    else{
-        echo ("fail");
+    if ($result) {
+        echo("success");
+    } else {
+        echo("fail");
     }
     ?>
 <?php else: ?>

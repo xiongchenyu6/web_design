@@ -1,8 +1,7 @@
-
 <?php
 $isGuest = false;
 $isComment = false;
-if($type == "guest"): ?>
+if ($type == "guest"): ?>
     <h>Host Info</h>
     <div class="hostInfo">
         <?php
@@ -21,7 +20,7 @@ if($type == "guest"): ?>
     <div class="guestsList">
         <h>Guest List</h>
         <?php
-        foreach ($guestList as $guest){
+        foreach ($guestList as $guest) {
             extract($guest);
             echo "<br>";
             echo "<img src='/$profile_photo'>";
@@ -36,16 +35,16 @@ if($type == "guest"): ?>
             echo "<br>";
             echo "<span>Guest rate: $rate</span>";
             echo "<br>";
-            if($payment == true){
+            if ($payment == true) {
                 echo "<span>Paid</span>";
-            }else{
+            } else {
                 echo "<span>Unpaid</span>";
             }
-            if($user_id == $_SESSION['userId']){
+            if ($user_id == $_SESSION['userId']) {
                 $isGuest = true;
-                if($comment == null){
+                if ($comment == null) {
                     $isComment = false;
-                } else{
+                } else {
                     $isComment = true;
                 }
             }
@@ -71,21 +70,21 @@ if($type == "guest"): ?>
             echo("Price: $price<br>");
             echo("</td>");
             echo("<td>");
-            if($user_id == $_SESSION['userId']){
+            if ($user_id == $_SESSION['userId']) {
                 echo("<button disabled onclick='($id)'>");
                 echo("Owner");
                 echo("</button>");
-            }else{
+            } else {
                 $guest = new Guest('guest');
-                if($guest->check($_SESSION['userId'],$host['id'])){
+                if ($guest->check($_SESSION['userId'], $host['id'])) {
                     echo("<button disabled onclick='join($id)'>");
                     echo("Joined");
                     echo("</button>");
+                } else {
+                    echo("<button onclick='join($id)'>");
+                    echo("Join");
+                    echo("</button>");
                 }
-                    else{
-                echo("<button onclick='join($id)'>");
-                echo("Join");
-                echo("</button>");}
             }
             echo("</td>");
             echo("</tr>");
@@ -96,21 +95,21 @@ if($type == "guest"): ?>
     <div class="commentsRate">
         <h1>Comments and rate</h1>
         <!-- rate and comments -->
-        <?php if($isGuest && !$isComment): ?>
-        <form action="/partyDetail.php" method="post">
-            <input style="display: none" type="number" name="user_id" value="<?php echo $_SESSION['userId'];?>">
-            <input style="display: none" type="number" name="host_id" value="<?php echo $host['id'];?>">
-            <fieldset id="rate">
-                <input type="radio" value="1" name="rate">
-                <input type="radio" value="2" name="rate">
-                <input type="radio" value="3" name="rate">
-                <input type="radio" value="4" name="rate">
-                <input type="radio" value="5" name="rate">
-            </fieldset>
-            <label for="comment">Comment</label>
-            <input type="text" name="comment">
-            <input type="submit" value="Confirm" name="submit">
-        </form>
+        <?php if ($isGuest && !$isComment): ?>
+            <form action="/partyDetail.php" method="post">
+                <input style="display: none" type="number" name="user_id" value="<?php echo $_SESSION['userId']; ?>">
+                <input style="display: none" type="number" name="host_id" value="<?php echo $host['id']; ?>">
+                <fieldset id="rate">
+                    <input type="radio" value="1" name="rate">
+                    <input type="radio" value="2" name="rate">
+                    <input type="radio" value="3" name="rate">
+                    <input type="radio" value="4" name="rate">
+                    <input type="radio" value="5" name="rate">
+                </fieldset>
+                <label for="comment">Comment</label>
+                <input type="text" name="comment">
+                <input type="submit" value="Confirm" name="submit">
+            </form>
         <?php endif; ?>
     </div>
 <?php else: ?>
