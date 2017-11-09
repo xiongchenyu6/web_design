@@ -1,4 +1,7 @@
 <?php
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
+?>
+<?php
 $isGuest = false;
 $isComment = false;
 if ($type == "guest"): ?>
@@ -6,7 +9,7 @@ if ($type == "guest"): ?>
     <div class="hostInfo">
         <?php
         extract($hostInfo);
-        echo "<img src='/$profile_photo'>";
+        echo "<img src='$baseUrl/$profile_photo'>";
         echo "<br>";
         echo "<span>Host User name :$username</span>";
         echo "<br>";
@@ -20,10 +23,11 @@ if ($type == "guest"): ?>
     <div class="guestsList">
         <h>Guest List</h>
         <?php
+        if($guestList != null){
         foreach ($guestList as $guest) {
             extract($guest);
             echo "<br>";
-            echo "<img src='/$profile_photo'>";
+            echo "<img src='$baseUrl/$profile_photo'>";
             echo "<br>";
             echo "<span>Guest username: $username</span>";
             echo "<br>";
@@ -48,7 +52,7 @@ if ($type == "guest"): ?>
                     $isComment = true;
                 }
             }
-        }
+        }}
         ?>
     </div>
     <hr>
@@ -96,7 +100,7 @@ if ($type == "guest"): ?>
         <h1>Comments and rate</h1>
         <!-- rate and comments -->
         <?php if ($isGuest && !$isComment): ?>
-            <form action="/partyDetail.php" method="post">
+            <form action="partyDetail.php" method="post">
                 <input style="display: none" type="number" name="user_id" value="<?php echo $_SESSION['userId']; ?>">
                 <input style="display: none" type="number" name="host_id" value="<?php echo $host['id']; ?>">
                 <fieldset id="rate">

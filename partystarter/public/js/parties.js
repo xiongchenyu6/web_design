@@ -1,7 +1,7 @@
 function join(id) {
 
     if (confirm("do you really want to join?") == true) {
-        var url = "/parties.php";
+        var url = "parties.php";
         var params = `id=${id}`;
         const callback = (data) => {
             alert(data)

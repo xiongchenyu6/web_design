@@ -1,10 +1,13 @@
+<?php
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
+?>
 <br><br>
 <div class="createnew" align="center">
-    <img src="./public/img/ps_img.jpeg" width="10%" height="10%" align="center"><br><br><br>
+    <img src="<?php echo $baseUrl?>/public/img/ps_img.jpeg" width="10%" height="10%" align="center"><br><br><br>
     <h1> Create New Party </h1><br>
 
 
-    <form action="createnew.php" method="post">  <!-- NEED HELP TO WRITE THIS PHP -->
+    <form action="<?php echo $baseUrl?>/createnew.php" method="post">  <!-- NEED HELP TO WRITE THIS PHP -->
         <div>
 
             <label for="partyname">Party Name: </label>
@@ -51,5 +54,3 @@ All fields are required.
 
 </div>
 <br><br><br><br></div>
-
-

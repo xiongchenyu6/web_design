@@ -8,6 +8,7 @@
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
 require_once(MODULES_PATH . '/Guest.php');
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
 $guest = new Guest('guest');
 ?>
 <?php if (isset($_POST['user_id'])): ?>
@@ -24,19 +25,21 @@ $guest = new Guest('guest');
         require_once(MODULES_PATH . '/User.php');
         $host = new Host('host');
         $user = new User('user');
+		        $thisHost = $host->byId($_GET['id']);
+        $hostInfo = $user->byId($thisHost['user_id']);
+        $guestList = $guest->findGuestListByHostId($_GET['id']);
 
-        $thisHost = $host->byId($_GET['id']);
 
         if ($thisHost['user_id'] == $_SESSION['userId']) {
             $variables = array(
                 'host' => $thisHost,
-                'type' => "owner"
+                'type' => "owner",
+                'hostInfo' => $hostInfo,
+                'guestList' => $guestList,
             );
 
             $renderLayoutWithContentFile("parties-body.php", $variables);
         } else {
-            $hostInfo = $user->byId($thisHost['user_id']);
-            $guestList = $guest->findGuestListByHostId($_GET['id']);
             $variables = array(
                 'host' => $thisHost,
                 'hostInfo' => $hostInfo,
@@ -46,8 +49,8 @@ $guest = new Guest('guest');
             $renderLayoutWithContentFile("partyDetail-body.php", $variables);
         }
         ?>
-        <link href="./public/css/partiesDetail.css" rel="stylesheet"/>
-        <script src="./public/js/partyDetail.js"></script>
+        <link href="<?php echo $baseUrl ?>/public/css/partiesDetail.css" rel="stylesheet"/>
+        <script src="<?php echo $baseUrl ?>/public/js/partyDetail.js"></script>
     <?php else: ?>
         <?php
         echo("wrong Url");

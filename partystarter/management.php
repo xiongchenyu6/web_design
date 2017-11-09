@@ -7,6 +7,7 @@
  */
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
 require_once(MODULES_PATH . '/Host.php');
 require_once(MODULES_PATH . '/Guest.php');
 ?>
@@ -39,6 +40,6 @@ require_once(MODULES_PATH . '/Guest.php');
     <?php
     $renderLayoutWithContentFile("management-body.php");
     ?>
-    <link href="./public/css/management.css" rel="stylesheet"/>
-    <script src="./public/js/management.js"></script>
+    <link href="<?php echo $baseUrl ?>/public/css/management.css" rel="stylesheet"/>
+    <script src="<?php echo $baseUrl ?>/public/js/management.js"></script>
 <?php endif; ?>

@@ -1,6 +1,9 @@
+<?php
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
+?>
 <h3 class="title">FAQs</h3>
 
-<img src="./public/img/faq.jpeg" width="18%" height="18%" align="left"></img>
+<img src="<?php echo $baseUrl ?>/public/img/faq.jpeg" width="18%" height="18%" align="left"></img>
 
 <div class="longtext">
 

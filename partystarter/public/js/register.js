@@ -17,7 +17,7 @@ function validate() {
     } else {
         console.info("success");
         errorMessage.innerHTML = "";
-        return false;
+        return true;
     }
 
 }

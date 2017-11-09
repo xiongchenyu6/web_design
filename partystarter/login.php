@@ -5,7 +5,9 @@
  * Date: 11/10/17
  * Time: 2:53 PM
  */
-require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
+require_once(realpath(dirname(__FILE__) . "/src/render.php"));
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
+?>
 
 <?php if (isset($_POST['submit'])): ?>
     <?php
@@ -16,12 +18,13 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
     } else {
         require_once(MODULES_PATH . "/User.php");
         $user = new User("user");
+		print_r("dfs");
         $auth = $user->checkUser($username, $password);
         if ($auth) {
             $_SESSION['photoUrl'] = $auth["profile_photo"];
             $_SESSION["userId"] = $auth["id"];
             echo '<script type="text/javascript">
-           window.location = "/index.php"
+           window.location = "index.php"
       </script>';
 
         } else {
@@ -31,6 +34,6 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php")); ?>
     ?>
 <?php else: ?>
     <?php $renderLayoutWithContentFile("login-body.php"); ?>
-    <link href="./public/css/login.css" rel="stylesheet"/>
-    <script src="./public/js/login.js"></script>
+    <link href="<?php echo $baseUrl ?>/public/css/login.css" rel="stylesheet"/>
+    <script src="<?php echo $baseUrl ?>/public/js/login.js"></script>
 <?php endif; ?>

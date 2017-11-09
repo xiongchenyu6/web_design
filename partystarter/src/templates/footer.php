@@ -1,3 +1,6 @@
+<?php
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
+?>
 <footer>
     <center>
         <p>
@@ -9,5 +12,5 @@
 
 </footer>
 </body>
-<script src="./public/js/layout.js"></script>
+<script src="<?php echo $baseUrl ?>/public/js/layout.js"></script>
 </html>

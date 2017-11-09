@@ -6,6 +6,7 @@
  * Time: 2:53 PM
  */
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
 ?>
 
 <?php if (isset($_POST['submit'])): ?>
@@ -43,7 +44,7 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
         $uploadOk = 0;
     }
 // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 500000) {
+    if ($_FILES["fileToUpload"]["size"] > 200000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -72,11 +73,13 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
     require_once(MODULES_PATH . "/User.php");
     $user = new User("user");
     unset($_POST['password2']);
+	$_POST['profile_photo'] = $target_file;
     $userId = $user->createUser($_POST);
     if ($userId == 0) {
         echo("Username is taken");
     } else {
         echo("Success");
+        require_once (TEMPLATES_PATH."/redirectToMain.php");
         $_SESSION["photoUrl"] = $target_file;
         $_SESSION["userId"] = $userId;
     }
@@ -84,6 +87,6 @@ require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 
 <?php else: ?>
     <?php $renderLayoutWithContentFile("register-body.php"); ?>
-    <script src="./public/js/register.js"></script>
-    <link href="./public/css/register.css" rel="stylesheet"/>
+    <script src="<?php echo $baseUrl ?>/public/js/register.js"></script>
+    <link href="<?php echo $baseUrl ?>/public/css/register.css" rel="stylesheet"/>
 <?php endif; ?>

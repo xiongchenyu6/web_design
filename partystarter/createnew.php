@@ -7,6 +7,7 @@
  */
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
 ?>
 
 <?php if (isset($_POST['submit'])): ?>
@@ -24,5 +25,5 @@ require_once(realpath(dirname(__FILE__) . "/src/auth.php"));
     <?php
     $renderLayoutWithContentFile("createnew-body.php");
     ?>
-    <link href="./public/css/createNew.css" rel="stylesheet"/>
+    <link href="<?php echo $baseUrl ?>/public/css/createNew.css" rel="stylesheet"/>
 <?php endif; ?>

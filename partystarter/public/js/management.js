@@ -59,7 +59,7 @@ guestButton.addEventListener('click', showGuess);
 function request(type, host_id) {
 
     if (confirm(`do you really want to ${type} the party?`) == true) {
-        var url = "/management.php";
+        var url = "management.php";
         var params = `${type}=1&id=${host_id}`;
         makepost(url, params, alert)
     }

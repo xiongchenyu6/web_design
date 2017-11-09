@@ -68,6 +68,7 @@ abstract class Model
     {
         $sql = "SELECT * FROM " . $this->tableName;
         $result = $this->conn->query($sql);
+		$rows= [];
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }

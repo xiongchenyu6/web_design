@@ -31,9 +31,10 @@ class Guest extends Model
         $stmt = $this->conn->prepare("select * from " . $this->tableName . " where `user_id` = ? and `host_id` = ?");
         $stmt->bind_param("ii", $user_id, $host_id);
         $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt->store_result();
+        $row = $this->fetchAssocStatement($stmt);
         $stmt->close();
-        if ($result->num_rows > 0) {
+        if ($row) {
             return true;
         } else {
             return false;
@@ -116,9 +117,9 @@ class Guest extends Model
         $user = new User("user");
         $endUser = $user->byId($user_id);
 
-        $to = $endUser['email'];
+        $to = 'f35ee@localhost';
         $subject = 'Payment confirmation';
-        $message = 'fd';
+        $message = 'Success';
         $headers = 'From: f35ee@localhost' . "\r\n" .
             'Reply-To: f35ee@localhost' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();

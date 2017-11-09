@@ -2,6 +2,7 @@
 require_once(realpath(dirname(__FILE__) . "/src/render.php"));
 require_once(MODULES_PATH . '/Host.php');
 $host = new Host('host');
+$baseUrl = $GLOBALS['config']['urls']['baseUrl'];
 ?>
 <?php if (isset($_POST['id'])): ?>
     <?php
@@ -35,6 +36,6 @@ $host = new Host('host');
     }
     $renderLayoutWithContentFile("parties-body.php", $variables);
     ?>
-    <link href="./public/css/parties.css" rel="stylesheet"/>
-    <script src="./public/js/parties.js"></script>
+    <link href="<?php echo $baseUrl ?>/public/css/parties.css" rel="stylesheet"/>
+    <script src="<?php echo $baseUrl ?>/public/js/parties.js"></script>
 <?php endif; ?>
